@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Hydro-Enviro-Geo-Stuff - Blog, Enviro.Geo.</title><link href="/" rel="alternate"></link><link href="/feeds/blog-envirogeo.atom.xml" rel="self"></link><id>/</id><updated>2019-12-30T22:20:00-05:00</updated><entry><title>My Second Test</title><link href="/my-second-test.html" rel="alternate"></link><published>2019-12-30T22:20:00-05:00</published><updated>2019-12-30T22:20:00-05:00</updated><author><name>asreeve</name></author><id>tag:None,2019-12-30:/my-second-test.html</id><content type="html">&lt;p&gt;A test of the pelican and Git workflow&lt;/p&gt;
+&lt;p&gt;This isn't going to be perfect
+but it might be good enought&lt;/p&gt;</content><category term="Blog, Enviro.Geo."></category></entry></feed>
