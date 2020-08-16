@@ -1,0 +1,71 @@
+* How can complex environmental problems be evaluated? 
+ * systems science is an approach to problem solving
+   * used through book to graphically present concepts
+   * organize ideas about a system's structure
+   * but can be more, basis for quantitative evaluation
+   * can be used in a range of disciplines 
+* Earth Systems
+ * Earth systems are interacting pieces of the earth
+   * reservoirs store energy and material,
+   * reservoirs linked by fluxes
+ * the set of organized reservoirs and fluxes produce a system
+ * a system can contain another system, scale determined by what is of interest
+ * a system is more than the sum of its parts
+ * Image shows an example of an earth systems, the rock cycle, that links the different rock types
+* Types of Systems
+ * one way to characterize a system is by its degree of isolation
+ * What are examples of the different types of systems
+ * figure shows some examples of these systems
+* A Simple Systems
+ * I'll use a bathtub as a simple example that everyone is familiar with
+ * A diagram illustrates this
+ * reservoir is the tub itself, fluxes are faucet and drain
+ * blue box outlines area of interest
+ * there are pieces outside this open system
+* A Simple Systems
+ * To accurately represent the system, feedback needs to be included, the amount of water in the tub influences the flow rate
+ * it internally regulates the system
+* A Simple Systems
+ * most tubs have an overflow 
+ * this acts as a threshold, 
+ * changes how the system behaves when the amount stored in it reaches a certain level.
+ * there is a feedback loop here also
+* Feedback and Threshold
+ * In the drainage from a basin, the feedback tends to regulate the level. 
+ * this is a negative or balancing feedback
+   * slows change in the system over time
+   * what are examples of a negative feedback?
+ * positive or reinforcing feedback
+   * promotes change
+   * acts as a snowballing effect...what does that mean?
+ * Threshold 
+   * sudden change in behavior when an amount passes a set level
+   * acts as a tipping point in some cases...when the lake suddenly turns green and smelly from algae
+* Feedback behavior
+ * graphs of feedback plotted as time (x) vs. amount (y)
+ * blue and green decrease slope over time, flatten; a negative feedback
+ * teal line increases in slope over time, no sign of stopping, accelerating: positive feedback
+* Types of Systems
+ * graph used to show different definitions of feedback
+ * dynamic equilibrium: work continuously being done, but system aproaches steady state
+ * static equilibrium: no work done, system is in balance, in low energy state, moving to another state takes energy
+ * transient (not at equilibrium), energy of mass in system changes 
+ * note in graph how these are defined, the blue line shifts from transient to steady atate
+   * how would this be appleid to a bathtub?
+* Residence Time
+ * when dealing with systems, commonly want to know how long something is in a system
+   * has management purposed
+   * is an average
+   * only applies at steady state (why?)
+* Residence Time
+ * go over not so contrived examples
+* The Earth’s Environmental Systems
+ * Broad catagories for earth systems, vary depending on source of info
+ * class can be diveded into these groups
+* The Earth’s Environmental Systems: Example
+ * Just about anything can be treated as a system
+ * people interested in how CO2 and other gasses impact climate create a carbon system
+ * allows creation of system of accounting for carbon atoms
+ * show what is understood and not understood
+ * putting numbers in this allows identification of most important parts, allows some prediction
+* Study Guide
