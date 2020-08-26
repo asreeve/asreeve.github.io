@@ -61,7 +61,7 @@
 
 ** Introductory video on mineral identification
 
-#+REVEAL_HTML: <a href="https:://drive.google.com/file/d/1-egh3duFB--Qf8cuYnoT5CkoN4WuAPxZ/view?usp=sharing">Link to additional information on mineral identification. Slow link </a> 
+#+REVEAL_HTML: <a href="https://drive.google.com/file/d/1-egh3duFB--Qf8cuYnoT5CkoN4WuAPxZ/view?usp=sharing">Link to additional information on mineral identification. Slow link </a> 
 
 ...
 #+REVEAL_HTML: <a href="https://youtu.be/STWZc8TX6tA?list=PLezLDRE1azWHmW6ERtBuWS021x7UhL9_g">Alternate link to additional information on mineral identification. </a> 
