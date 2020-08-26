@@ -1,0 +1,77 @@
+#+TITLE:     Igneous Rock Lab
+#+AUTHOR:    Andrew Reeve
+#+EMAIL:     asreeve@maine.edu
+#+DATE:      
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:1 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:https://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+#+BEAMER_FRAME_LEVEL: 1
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+* Igneous Rock Definition 
+** Igneous Rocks form from a liquid melt (magma).  
+** Originate from fluids deep in the earth or for rocks that have been heated and **completely** melted
+
+* Classification of Igneous Rocks
+** Texture
+*** Glass
+*** Aphanitic
+*** Phaneritic
+*** Vesicular (foamy)
+** Composition 
+   * Light or Pink (Felsic)
+   * Grey/salt and pepper
+   * Dark/black or dark green (Mafic)
+
+* Identifying Minerals
+   In this lab, hand samples are evaluated using tests and
+   observations. The most important are:
+  * Cleavage: how many and angle between cleavage planes
+  * Luster: metalic, glassy, etc.
+  * Color: careful, some minerals come in a range of colors (eg: quartz)
+  * Hardness: but how easy it is so scratch (not break)
+  * Streak: color of powdered mineral, uses a porcelain plate (h = 6.5-7.5)
+
+* Doing the Labs
+   * Minerals:numbers, rocks:letters
+   * Watch the videos and fill in the attached tables. 
+   * More rows on the table than there are samples.
+   * There are more minerals in charts (tables 2
+     and 3) than among samples. Other minerals will appear in
+     later labs. Note that hematite is lists in both tables 2 and 3
+** ID minerals
+   * Hardness tests done from hardest (glass) to softest
+     (fingernail). If mineral scratched, *usually* stopped doing
+     the other tests (if a mineral is harder than glass its harder
+     than the other materials used for testing).
+   * In some cases I verified unclear tests by reversing the test. For
+     example, if a nail did not appear to scratch a mineral, I
+     sometimes tested the mineral to see if it would scratch the nail.
+   * If a mineral is harder than the streak plate, it can powder the
+     streak plate (false response)
+   * For the Igneous Rock Lab, you have the following minerals:
+     hematite, quartz, hornblende, pyroxene, olivine, biotite,
+     muscovite, orthoclase, plagioclase,
+** ID rocks
+   * When looking at the rocks, you are determining grain size and
+     color. Color is a proxy of mineralogy and chemistry. 
+   * Make a 4
+     by 3 chart with rows of foamy/glassy/fine grained/coarse grained,
+     and columns of dark/medium/light. The place the rocks in the
+     chart you have made. This will produce a chart just like table 4,
+   * The following rock samples are present: obsidian,
+     scoria, rhyolite, andesite, basalt, granite, diorite, and gabbro
+** Cleavage
+   Cleavage seems to confuse students
+   * don't confuse with crystal faces
+   * look for multiple broken surfaces (stair step patterns)
+   * look for reflective surfaces
+
