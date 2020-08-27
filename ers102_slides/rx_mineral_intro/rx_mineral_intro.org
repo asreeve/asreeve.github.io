@@ -1,0 +1,177 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Earth Materials
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s01.ogg">
+ 
+* Earth Materials
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s02.ogg">
+ 
+* Minerals: Definition
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s03.ogg">
+ 
+** Minerals: Definition
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s04.ogg">
+ 
+** Minerals: Definition
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s05.ogg">
+ 
+* Minerals: Identification
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s06.ogg">
+ 
+* Hand Sample (core)
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s07.ogg">
+ 
+* Hand Sample
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s08.ogg">
+ 
+* Thin Section
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s09.ogg">
+ 
+* Thin Section
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s10.ogg">
+ 
+* Mineral Identification:Practical Purpose
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s11.ogg">
+ 
+* Major Groups, Common examples
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s12.ogg">
+ 
+* Dominant minerals
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s13.ogg">
+ 
+* Clay Minerals
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_013.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s14.ogg">
+ 
+* Chemical surface exchange
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_014.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s15.ogg">
+ 
+* Questions?
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_015.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s16.ogg">
+ 
+* Rock Cycle
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_016.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/rx_mineral_s17.ogg">
+ 
+* Review
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/rx_mineral_intro_017.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+ 
+* Quiz 
+#+REVEAL_HTML: <script data-quiz="rx_min_quiz" src="quiz/rx_min_quiz.js"> </script>
