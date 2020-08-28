@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orgd8bbef3" data-background="slides/igneous_rx_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgd8bbef3">Igneous Rocks Classification</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s01.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org485b312" data-background="slides/igneous_rx_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org485b312">Cape Rosier, Maine</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s02.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org81a5329" data-background="slides/igneous_rx_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org81a5329">Volcanic Deposits</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s03.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org038c9c4" data-background="slides/igneous_rx_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org038c9c4">Igneous Processes: Intrusive Activity</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s04.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orge123ea4" data-background="slides/igneous_rx_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orge123ea4">Igneous Processes: Extrusive Activity</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s05.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgba27c95" data-background="slides/igneous_rx_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgba27c95">Plutons in Maine</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s06.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgeeff21b" data-background="slides/igneous_rx_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgeeff21b">Granite Pluton, near Milbridge</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s07.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orga1bcacf" data-background="slides/igneous_rx_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga1bcacf">Xenoliths in Dorite, near Northport</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s08.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgfc70b4b" data-background="slides/igneous_rx_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfc70b4b">Resources related to Igneous Rocks</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s09.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org070ee95" data-background="slides/igneous_rx_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org070ee95">Pegmatite, Screw Auger Falls (N. Oxford, ME)</h2>
+<p class ="fragment" data-audio-src="audio/igneous_rx_s10.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org81151b1" data-background="slides/igneous_rx_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org81151b1">Study Guide</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org8e84c36">
+<h2 id="org8e84c36">Quiz</h2>
+<script data-quiz="igneous_quiz" src="quiz/igneous_quiz.js"> </script>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
