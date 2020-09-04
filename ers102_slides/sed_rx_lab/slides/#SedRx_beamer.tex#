@@ -1,0 +1,77 @@
+\providecommand{\pdfxopt}{a-1b,mathxmp}
+
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+\documentclass[ignorenonframetext,slidestop]{beamer}
+
+\input{/home/asreeve/current/class/ers102/pre_latex/luatex_pre.tex}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[square]
+\setbeamercolor*{enumerate item}{fg=red,bg=blue}
+\setbeamercolor*{enumerate subitem}{fg=blue,bg=red}
+
+\begin{document}
+
+\begin{frame}{Sedimentary Rocks}
+  \begin{enumerate}
+  \item Sedimentary rocks form from the chemicals and particulates created during weathering of other earth materials.
+  \item Sedimentary rocks form as a result of weathering, transport, and lithification.
+  \item As with other rocks, the composition and texture of a sedimentary rock provides information on how and where they were formed.
+  \item What you learned about minerals in the igneous rock lab is applicable to this lab.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Sedimentary Rock Classification}
+  Sedimentary rock classification is based on texture with further classification based on mineralogy and other features in the rock.
+  \begin{enumerate}
+  \item \textbf{Clastic} sedimentary rocks are made up of grains (solid particles).
+    \begin{itemize}
+    \item Shale
+    \item Siltstone
+    \item Sandstone
+    \item Conglomerate/Breccia
+    \end{itemize}
+  \item \textbf{Chemical} sedimentary rocks precipitate from chemicals derived from weathering.
+    \begin{itemize}
+    \item Limestone (reacts with acid!)
+    \item Dolostone (reacts with acid when powdered!)
+    \item Rock Salt and Gypsum
+    \item Chert
+    \item Coal (?)
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Sedimentary Rock and Environments}
+  \begin{enumerate}
+  \item  Sedimentary rocks form at or near the surface of the Earth.
+  \item When considering what environment a rock formed in, use your own experience! Where have you seen the sediments in the rock?
+    \begin{enumerate}
+    \item Sandstone: beach, sand dune (high energy environment)
+    \item Shale: deep water, flood plain (low energy environment)
+    \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Doing the Lab}{Mineral ID}
+  \begin{enumerate}
+  \item Minerals:numbers, rocks:letters
+  \item Watch the videos or examine hand samples and fill in the attached tables.
+  \item More rows on the table than there are samples.
+  \item Table of minerals contains minerals not in this lab, they appear in other labs
+  \item Once properties defined, ID mineral sample and fill in table
+  \item One new test appears in the videos, placing a drop of acid on a sample. If a sample contains calcite or similar mineral, it will fizz or effervesce.
+  \end{enumerate}
+The following minerals are in this lab:  calcite, quartz, halite, gypsum, kaolinite
+\end{frame}
+
+\begin{frame}{Doing the Lab}{Rock ID}
+  \begin{enumerate}
+  \item Group rocks by texture (clastic [and then grain size] vs. chemical)
+  \item Compare with rock descriptions and ID rocks
+  \end{enumerate}
+The following rock samples are present: shale, chert, conglomerate, limestone, rock salt, rock gypsum, breccia, coal
+\end{frame}
+\end{document}
