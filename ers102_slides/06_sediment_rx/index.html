@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-org3d05be7" data-background="slides/sediment_rx_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org3d05be7">Sedimentary Rocks: Definition</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org5a8d8df" data-background="slides/sediment_rx_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org5a8d8df">Sedimentary Rocks: Classification</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgb7c122a" data-background="slides/sediment_rx_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb7c122a">Sedimentary Rock Formation</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org9ff2b11">
+<h2 id="org9ff2b11">How can sedimentary rocks be used to infer past environmental</h2>
+<p>
+conditions?
+</p>
+<p>
+:reveal<sub>background</sub><sub>size</sub>: 1100px
+:reveal<sub>background</sub>: slides/sediment<sub>rx</sub><sub>003.png</sub>
+:reveal<sub>background</sub><sub>trans</sub>: slide
+</p>
+
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orga3de7d5" data-background="slides/sediment_rx_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga3de7d5">Sedimentary Features</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgd57a1b6" data-background="slides/sediment_rx_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgd57a1b6">More sedimentary structures</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org6eca1f2" data-background="slides/sediment_rx_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org6eca1f2">Prince Edward Island, Canada</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org733e401" data-background="slides/sediment_rx_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org733e401">Applications</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgc470648" data-background="slides/sediment_rx_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc470648">More Applications</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orge34b0c8" data-background="slides/sediment_rx_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orge34b0c8">Sedimentary processes that concentrate materials</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org622a0ef" data-background="slides/sediment_rx_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org622a0ef">Study Guide</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org494beb7">
+<h2 id="org494beb7">Quiz</h2>
+<script data-quiz="sedi_rx_quiz" src="quiz/sedi_rx.js"> </script>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
