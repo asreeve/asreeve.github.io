@@ -18,7 +18,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s1.ogg">
  
 * Sedimentary Rocks: Classification
   :PROPERTIES:
@@ -27,7 +27,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s2.ogg">
  
 * Sedimentary Rock Formation
   :PROPERTIES:
@@ -36,17 +36,16 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s3.ogg">
  
-* How can sedimentary rocks be used to infer past environmental
-conditions?
+* How can sedimentary rocks be used to infer past environmental conditions?
   :PROPERTIES:
   :reveal_background_size: 1100px
   :reveal_background: slides/sediment_rx_003.png
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s4.ogg">
  
 * Sedimentary Features
   :PROPERTIES:
@@ -55,7 +54,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s5.ogg">
  
 * More sedimentary structures
   :PROPERTIES:
@@ -64,7 +63,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s6.ogg">
  
 * Prince Edward Island, Canada
   :PROPERTIES:
@@ -73,7 +72,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s7.ogg">
  
 * Applications
   :PROPERTIES:
@@ -82,7 +81,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s8.ogg">
  
 * More Applications
   :PROPERTIES:
@@ -91,7 +90,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s9.ogg">
  
 * Sedimentary processes that concentrate materials
   :PROPERTIES:
@@ -100,7 +99,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/sedi_rx_s10.ogg">
  
 * Study Guide
   :PROPERTIES:
@@ -109,7 +108,7 @@ conditions?
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
  
 * Quiz 
 #+REVEAL_HTML: <script data-quiz="sedi_rx_quiz" src="quiz/sedi_rx.js"> </script>
