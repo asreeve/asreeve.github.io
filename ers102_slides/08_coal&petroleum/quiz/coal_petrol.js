@@ -16,7 +16,7 @@ coal_petrol_quiz={
 			"correct": "<p>Yes. Water mixed with chemicals and particles are quickly pumped into tight rocks to fracture them free trapped gas and oil.</p>",
 			"incorrect": "<p>No. Want to try again?</p>"},		
 		{ // Question 
-			"q": "What is petrolium formed from ",
+			"q": "What is petroleum formed from ",
 			"a": [
 				{"option": "Milfoil", "incorrect": false},
 				{"option": "Seaweed, like kelp", "incorrect": false},
@@ -24,7 +24,7 @@ coal_petrol_quiz={
 				{"option": "Land plants", "incorrect": false},
 				{"option": "Dinosaur fat", "incorrect": false} // no comma here
 			],
-			"correct": "<p>Correct. Petrolium comes from sediments containg marine algea</p>",
+			"correct": "<p>Correct. Petroleum comes from sediments containing marine algae</p>",
 			"incorrect": "<p>Not correct</p>" 
 		},
 		{ // Question 
@@ -34,7 +34,7 @@ coal_petrol_quiz={
 				{"option": "Deep and cold lakes", "incorrect": false},
 				{"option": "Deep oceans", "incorrect": false},
 				{"option": "Tropical wetlands", "correct": true},
-				{"option": "Subartic upland spruce forests", "incorrect": false} // no comma here
+				{"option": "Subarctic upland spruce forests", "incorrect": false} // no comma here
 			],
 			"correct": "<p>Right, Coal deposits commonly form in tropical coastal wetland environments</p>",
 			"incorrect": "<p>I'm sorry :-( ¿Do you want to try again?</p>" 
