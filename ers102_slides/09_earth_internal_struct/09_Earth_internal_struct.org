@@ -27,7 +27,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s01.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s02.ogg">
  
 * Waves from Earthquakes and Other Events
   :PROPERTIES:
@@ -36,7 +36,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s01.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s03.ogg">
  
 * Earthquake Waves
   :PROPERTIES:
@@ -45,7 +45,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s01.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s04.ogg">
  
 * Animation of seismic waves and Earth’s Structure
   :PROPERTIES:
@@ -54,7 +54,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s01.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s05.ogg">
  
 * Study Guide
   :PROPERTIES:
