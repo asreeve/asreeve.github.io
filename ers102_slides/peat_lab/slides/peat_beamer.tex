@@ -1,0 +1,163 @@
+\providecommand{\pdfxopt}{a-1b,mathxmp}
+
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+\documentclass[ignorenonframetext,slidestop]{beamer}
+
+\input{/home/asreeve/current/tex_style/preamble_102}
+\usepackage{cancel}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[square]
+\setbeamercolor*{enumerate item}{fg=red,bg=blue}
+\setbeamercolor*{enumerate subitem}{fg=blue,bg=red}
+
+\begin{document}
+
+\begin{frame}{Peat as a Resource}
+  \begin{enumerate}
+  \item Peat is an organic sediment that accumulates in some wetland environments.
+  \item Some peat deposits are precursors to coal formation
+  \item Peat is used a fuel, as a soil additive, and for cosmetic purposes (e.g.peat baths).
+  \end{enumerate}
+
+  In this lab, you will explore the energy value of peat deposits in Maine and work through the calculations to estimate the amount of peat in a Maine peatland.
+\end{frame}
+
+\begin{frame}{Calculating Irregular Areas and Volumes}
+  \begin{itemize}
+  \item How can the areas of irregular objects, like a peatland, be estimate?
+  \item complex math and computer methods like digitizing with a computer
+  \item simpler hand methods using geometry and trigonometry
+    \begin{itemize}
+    \item Grid method
+      \begin{enumerate}
+      \item overlying a grid,
+      \item determine grid cell area
+      \item counting grid cells in irregular object
+      \item multiply cell area by number of cells
+      \end{enumerate}
+    \item Polygon method
+      \begin{enumerate}
+      \item divide irregular object into polygons
+      \item calculate area of polygons 
+      \item sum areas of all the polygons
+      \end{enumerate}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Getting the area using a grid}
+  
+  Using first method: overlay grid on irregular object (graphics program over digital image, graph paper on printed image).
+
+  \begin{minipage}{.63\textwidth}
+    \includegraphics[width=\textwidth]{../../figs/peat_area_grid.pdf}
+  \end{minipage}
+  \begin{minipage}{.35\textwidth}
+    \begin{itemize}
+    \item Note scale on image. 10 cells span what 100 m on map.
+    \item Cell is 100m/10 = 10 m across
+    \item one 10 m by 10 m call: $ 10 m \times 10 m = 100 m^2$
+    \item  cell area = 100 $m^2$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Getting the area using a grid}
+  Area of heart shaped blob in graphic: 1. count cell vertices (where lines cross) inside object, 2. area around the vertices is cell area (100 $m^2$), (as shown).
+  
+  \begin{minipage}{.63\textwidth}
+    \includegraphics[width=\textwidth]{../../figs/peat_area_grid2.pdf}
+  \end{minipage}
+  \begin{minipage}{.35\textwidth}
+    \begin{itemize}
+      \item Count number of vertices.
+      \item done in small groups along rows, that added together.
+      \item 487 total cells in irregular heart-blob.
+      \item number of cells multiplied by cell area = total area of object.
+        \scriptsize $ 487 \times 100\, m^2 =48700 \, m^2$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Breaking the object into polygons}
+  Polygonal method: break up object into simple polygons. Recalling high school mathematics:
+  \begin{itemize}
+  \item Triangle area $= \frac{1}{2} base \times height$
+  \item Rectangle area $= base \times height$
+  \end{itemize}
+\end{frame}
+\begin{frame}{Breaking the object into polygons}
+  In image below, irregular shape broken into rectangles and triangle. Using equations for polygons and map scale, can estimate real area object.
+  
+   \begin{minipage}{.58\textwidth}
+    \includegraphics[width=\textwidth]{../../figs/peat_area_poly.pdf}
+  \end{minipage}
+  \begin{minipage}{.40\textwidth}
+    \begin{itemize}
+      \item yellow triangle area of 2100 $m^2$
+      \item orange triangle area of 400  $m^2$
+      \item pink rectangle area of 5600 $m^2$
+      \item green rectangle area of 14000  $m^2$
+      \end{itemize}
+          \end{minipage}
+Calculate area for all polygons, sum polygon areas to estimate total  object area.
+\end{frame}
+
+\begin{frame}{Estimating peat area and volume}
+  \begin{minipage}{.45\textwidth}
+    \begin{itemize}
+    \item When estimating peatland area, only use 'heath' units
+    \item To estimate peat volume, multiply area by average thickness of low ash peat (darkest colored band)
+    \item Low ash peat depths shown in 'explanation of cores'. Numbers on map correlate with core number
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{.5\textwidth}
+    \includegraphics[width=\textwidth]{../../figs/sunkhaze_map1_2.png}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Doing unit conversions}
+  This lab includes conversions between units. When converting between measurements that cross at zero \footnotesize (inches and cm for example, 0 inches = 0 cm) \normalsize,
+  \begin{enumerate}
+  \item multiply by a fraction with equal amount but different units in numerator and denominator. 
+  \item arrange fractions so the units cancel, leaving only the desired unit
+  \end{enumerate}
+
+  \footnotesize
+  \begin{block}{Example: How many cm are in a mile?}
+    \begin{enumerate}
+    \item identify conversions that will allow stepping from 1 mile to cm.
+      \begin{itemize} \footnotesize
+      \item 1 mile = 5280 ft.
+      \item 1 ft = 12 inches
+      \item 1 inch = 2.54 cm
+      \end{itemize}
+    \item write out equation so that only desired units do not cancel:
+    \end{enumerate}
+    \begin{equation*}
+      \underbrace{1 \; \cancel{mile}}_{starting \; value} \times \frac{5280 \; \bcancel{ft}}{1 \; \cancel{mile}} \times
+      \frac{12 \; \xcancel{inches}}{1 \; \bcancel{ft}} \times \frac{2.54 \; cm}{1 \; \xcancel{inch}}
+      = 160934.4 \; cm
+    \end{equation*}
+    or 161000 cm if using significant digits
+  \end{block}
+\end{frame}
+
+\begin{frame}{Doing unit conversions}
+ \footnotesize
+ \begin{block}{Example: How much energy is in 27 ft$^3$ of wet peat?}
+   \begin{itemize}
+   \item 1 wet ft$^3$ peat = 8.7 lbs dried peat (in lab pdf)
+   \item 1 lbs dried peat = 9518 BTUs (where did this come from in the lab pdf?)
+   \end{itemize}
+   \begin{equation*}
+     27 \, wet \, ft^3 \times \frac{8.7 \,lbs \,dry}{1 \,wet \,ft^3} \times \frac{9518 \,BTUs}{1 \,lbs \,dry} = 2235778.2 \, BTUs
+   \end{equation*}
+   or $2.2 \cdot 10^6$  BTUs if using significant figures
+ \end{block}
+ For those who would like a more in-depth discussion of algebra and unit conversions and a review of significant figures, you may want to read 'CG-1, Significant figures' and 'CG-7, The algebra of unit conversions' available from: \href{https://www.nagt.org/nagt/jge/columns/compgeo.html}{https://www.nagt.org/nagt/jge/columns/compgeo.html}
+\end{frame}
+\end{document}
