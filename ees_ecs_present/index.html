@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../../ers102/audio_lecture/reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../../ers102/audio_lecture/reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../../ers102/audio_lecture/reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../../ers102/audio_lecture/reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orgee543a0" data-background="slides/ees_ecs_present_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgee543a0">Introduction</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgfe6a93d" data-background="slides/ees_ecs_present_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfe6a93d">Classes</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgc9c032a" data-background="slides/ees_ecs_present_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc9c032a">What?</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgb0e91e5" data-background="slides/ees_ecs_present_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb0e91e5">Climate Change Sampling &amp; Data Collection</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgb533cdc" data-background="slides/ees_ecs_present_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb533cdc">Climate Change Sampling &amp; Data Collection</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org15d341d">
+<h2 id="org15d341d">Weather and Arctic Ice Cover</h2>
+<video data-autoplay src="video/seaice_1980-2012_v2.mp4"></video>
+
+</section>
+</section>
+<section>
+<section id="slide-org111bba1" data-background="slides/ees_ecs_present_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org111bba1">River Monitoring</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgbcce479" data-background="slides/ees_ecs_present_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgbcce479">Groundwater Monitoring</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org28675b8" data-background="slides/ees_ecs_present_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org28675b8">Geochemistry</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org33164d3" data-background="slides/ees_ecs_present_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org33164d3">Sediment Sampling/Wetlands</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgf6f48b6" data-background="slides/ees_ecs_present_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgf6f48b6">Mineral Resources</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgfba865d" data-background="slides/ees_ecs_present_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfba865d">Questions?</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+</section>
+</section>
+</div>
+</div>
+<script src="../../ers102/audio_lecture/reveal/dist/reveal.js"></script>
+<script src="../../ers102/audio_lecture/reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../../ers102/audio_lecture/reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../../ers102/audio_lecture/reveal/plugin/menu/menu.js'},
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
