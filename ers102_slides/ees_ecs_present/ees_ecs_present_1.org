@@ -18,7 +18,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s01.ogg">
  
 * Classes
   :PROPERTIES:
@@ -27,16 +27,16 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s02.ogg">
  
-* What?
+* What do we do?
   :PROPERTIES:
   :reveal_background_size: 1100px
   :reveal_background: slides/ees_ecs_present_002.png
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s03.ogg">
  
 * Climate Change Sampling & Data Collection
   :PROPERTIES:
@@ -45,7 +45,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s04.ogg">
  
 * Climate Change Sampling & Data Collection
   :PROPERTIES:
@@ -54,8 +54,13 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s05.ogg">
  
+* Weather and Arctic Ice Cover
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s06.ogg">
+
+#+REVEAL_HTML: <video data-autoplay src="video/seaice_1980-2012_v2_hispeed.mp4"></video>
+
 * River Monitoring
   :PROPERTIES:
   :reveal_background_size: 1100px
@@ -63,7 +68,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s07.ogg">
  
 * Groundwater Monitoring
   :PROPERTIES:
@@ -72,7 +77,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s08.ogg">
  
 * Geochemistry
   :PROPERTIES:
@@ -81,7 +86,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s09.ogg">
  
 * Sediment Sampling/Wetlands
   :PROPERTIES:
@@ -90,7 +95,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s10.ogg">
  
 * Mineral Resources
   :PROPERTIES:
@@ -99,7 +104,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s11.ogg">
  
 * Questions?
   :PROPERTIES:
@@ -108,5 +113,5 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/ees_117_s12.ogg">
  
