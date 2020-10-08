@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orge1450eb" data-background="slides/topomap_beamer_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orge1450eb">Topographic Maps Bottom half of Princeton ME 7.5 minute quad</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s01.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org81551b7" data-background="slides/topomap_beamer_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org81551b7">Scale</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s02.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org43a3eff" data-background="slides/topomap_beamer_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org43a3eff">Geographic location</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s03.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgc087d0e" data-background="slides/topomap_beamer_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc087d0e">Contour Lines</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s04.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orga068cd3" data-background="slides/topomap_beamer_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga068cd3">Contour Lines</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s05.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org4606207" data-background="slides/topomap_beamer_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4606207">Contour Lines</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s06.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgbf68eb3" data-background="slides/topomap_beamer_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgbf68eb3">Contour Lines</h2>
+<p class ="fragment" data-audio-src="audio/topo_lab_s07.ogg">
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
