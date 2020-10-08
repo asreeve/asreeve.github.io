@@ -54,7 +54,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s04.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s05.ogg">
  
 * Assessing Risk San Francisco (1906) & San Andreas Fault
   :PROPERTIES:
@@ -63,7 +63,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s05.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s06.ogg">
  
 * Earthquake Intensity Scales
   :PROPERTIES:
@@ -72,7 +72,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s05.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s07.ogg">
  
 * Modified Mercalli Intensity Scale
   :PROPERTIES:
@@ -81,7 +81,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s06.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s08.ogg">
  
 * New Madrid Earthquake (several earthquakes, late 1811–early 1812)
   :PROPERTIES:
@@ -90,7 +90,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s07.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s09.ogg">
  
 * Personal Accounts, New Madrid Earthquake Johnston & Schweig (1996) Annu. Rev. Earth Planet. Sci.
   :PROPERTIES:
@@ -99,7 +99,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s08.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s10.ogg">
  
 * New Madrid Earthquake (several earthquakes, late 1811–early 1812)
   :PROPERTIES:
@@ -108,7 +108,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s09.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s11.ogg">
  
 * Prediction
   :PROPERTIES:
@@ -117,7 +117,7 @@
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s10.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/quake_damage_s12.ogg">
  
 * Study Guide
   :PROPERTIES:
