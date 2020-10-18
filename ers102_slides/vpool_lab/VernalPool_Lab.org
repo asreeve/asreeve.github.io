@@ -1,0 +1,104 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Vernal Pools
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/vernalpl_beamer_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/vernal_pool_s01.ogg">
+ 
+* The Water Balance
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/vernalpl_beamer_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/vernal_pool_s02.ogg">
+ 
+* Calculating a balance with a spreadsheet.
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/vernalpl_beamer_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/vernal_pool_s03.ogg">
+
+* Importing into Google Sheets
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_import.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_import.ogg">
+ 
+* Summing Inputs and Outputs with Google Sheets
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_in_out.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_in_out.ogg">
+
+* Calculating the Budget from fluxes
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_fluxbudget.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_fluxbudget.ogg">
+
+* Graphing or Plotting Data
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_plot.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_plot.ogg">
+
+* Layout in New Workbook Sheet
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_layout.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_layout.ogg">
+
+* Printing or Exporting the Spreadsheet
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_print1.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_print1.ogg">
+
+
+* Printing or Exporting the Spreadsheet
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: gifs/VPool_print2.gif
+  :reveal_background_trans: slide
+  :END:
+
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/spreadsheet_print2.ogg">
+

@@ -1,0 +1,55 @@
+\providecommand{\pdfxopt}{a-1b,mathxmp}
+
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+\documentclass[ignorenonframetext,slidestop]{beamer}
+
+\input{/home/asreeve/current/tex_style/preamble_102}
+\usepackage{cancel}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[square]
+\setbeamercolor*{enumerate item}{fg=red,bg=blue}
+\setbeamercolor*{enumerate subitem}{fg=blue,bg=red}
+
+\begin{document}
+
+\begin{frame}{Vernal Pools}
+  \begin{minipage}{.55\textwidth}
+  Vernal pools, a wetland system found in Maine and many other locations, form in wet periods and then slowly dry out over time.
+  \begin{enumerate}
+  \item \small These pools occur in isolated depressions with no channelized input or output.
+  \item \small Vernal pools are important habitat for a variety of organisms, especially amphibians that can thrive in these fish-less pools.
+  \item \small They export nutrients and food (delicious frogs) to the upland.
+  \end{enumerate}
+
+  In this lab, you will the hydrology of vernal pools.
+\end{minipage}
+\begin{minipage}{.55\textwidth}
+  \includegraphics[width=\textwidth]{../../figs/peat_area_grid.pdf}
+\end{minipage}
+
+\end{frame}
+
+
+
+\begin{frame}{Getting the area using a grid}
+  
+  Using first method: overlay grid on irregular object (graphics program over digital image, graph paper on printed image).
+
+  \begin{minipage}{.63\textwidth}
+    \includegraphics[width=\textwidth]{../../figs/peat_area_grid.pdf}
+  \end{minipage}
+  \begin{minipage}{.35\textwidth}
+    \begin{itemize}
+    \item Note scale on image. 10 cells span what 100 m on map.
+    \item Cell is 100m/10 = 10 m across
+    \item one 10 m by 10 m call: $ 10 m \times 10 m = 100 m^2$
+    \item  cell area = 100 $m^2$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+
+\end{document}
