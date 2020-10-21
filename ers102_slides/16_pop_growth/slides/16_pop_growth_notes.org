@@ -1,0 +1,13 @@
+* Metrics for measuring population change
+* Population Models
+* Linear Models
+* Geometric Models
+* Exponential Models
+* Logistic Models
+* Logistic Models
+* Predator-Prey Cycles
+* UN global population projections
+* UN population projections
+* UN global population pyramids
+* Human footprint
+* Study Guide

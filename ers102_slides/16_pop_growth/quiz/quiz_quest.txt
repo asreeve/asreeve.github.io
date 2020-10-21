@@ -1,0 +1,64 @@
+
+\begin{question}
+  If a population is growing exponentially at a rate of 50\% per year, and the population is 10,000 in 2016, how big will the population be in 2019 (three years of growth)?
+  \begin{choices}
+    \choice $10,000 \times 1.5 \times 1.5 \times 1.5= 33750$
+    \choice $10,000 +150 + 150 + 150= 10,450$
+    \choice $10,000 \times e^{1.5 \times 3} = 900,171$
+    \choice $10,000 \times e^{3./1.5} = 73,890$
+    \choice $10,000 \times e^{0.5 \times 0.5 \times 0.5} = 11,331$
+  \end{choices}
+\end{question}
+
+\begin{figure}[t]
+\includegraphics[width=.5\textwidth]{./figs/log_pop_curve.pdf}
+\caption{Graph of deer population on the Island of Sodor where the Deer population is controlled by train collisions.}\label{sodor}
+\end{figure}
+
+\begin{question}
+What kind of populations growth model is illustrated in figure \ref{sodor}?
+\begin{choices}
+\choice{exponential}
+\choice{geometric}
+\choice{arithmetic}
+\choice{linear}
+\choice{logistic}
+\end{choices}
+\end{question}
+
+\begin{question}
+What does the carrying capacity of a population model refer to?
+\begin{choices}
+\choice{the maximum population that can be sustained}
+\choice{the growth rate when the population is very small}
+\choice{the proportion of the population that carry over into the following year}
+\choice{the population size when the growth rate is greatest}
+\choice{the minimum population that can be sustained}
+\end{choices} 
+\end{question}
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{./figs/pop_dist.pdf}
+\caption{Age distribution of populations (population pyramids) showing triangle shaped (wide dashed line), Tower shaped (fine dashed line), and bowl shaped (medium dashed line) population distributions.} \label{popdist}
+\end{figure}
+\begin{question}
+Figure \ref{popdist} illustrates several age distributions for the populations of different countries. As the standard of living (nutrition, medicine, sanitation) in a country improves, how does the age distribution change? 
+\begin{choices}
+\choice from triangle to tower shaped
+\choice from bowl to tower shaped
+\choice from tower to triangle shaped
+\choice from bowl to tower shaped
+\choice from triangle to bow shaped 
+\end{choices}
+\end{question}
+
+\begin{question}
+Population changes (birth minus death rates) are...
+\begin{choices}
+\choice similar in different countries around the world
+\choice are different in different countries, with some regions experiencing population loss 
+\choice positive (increasing populations) in all regions of the world, with some minor variability in growth rates
+\choice nearly zero globally, with little population increase projected in the future
+\choice positive only in less developed countries  where birth control in unavailable
+\end{choices}
+\end{question}
