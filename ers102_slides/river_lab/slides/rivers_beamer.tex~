@@ -1,0 +1,151 @@
+
+\providecommand{\pdfxopt}{a-1b,mathxmp}
+
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+\documentclass[ignorenonframetext,aspectratio=169]{beamer}
+
+\input{/home/asreeve/current/tex_style/preamble_102}
+\usepackage{cancel}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[square]
+\setbeamercolor*{enumerate item}{fg=red,bg=blue}
+\setbeamercolor*{enumerate subitem}{fg=blue,bg=red}
+
+\begin{document}
+
+\begin{frame}{The Crooked River}{River hydrology and geomorphology}
+  Understanding how water discharge shapes rivers and changes over time allows resource managers to plan for floods, manage freshwater fisheries, and make other decisions on how to best use riverine resources. In this lab,
+  \begin{itemize}
+  \item river discharge data will be analyzed to estimate the frequency of flood events,
+  \item and Google Earth will be used to measure river features.
+  \end{itemize}
+  To complete this lab, please \textbf{install Google Earth} on your computer. A keyhole markup file (KML) is provided for use with this program.   
+\end{frame}
+
+\begin{frame}{Basin Area: Discharge Correlation}
+  \begin{minipage}{.45\textwidth}
+    \includegraphics[width=\textwidth]{./example_corr_chart.png}
+  \end{minipage}
+  \begin{minipage}{.52\textwidth}
+    \begin{itemize}
+    \item I.D. relationships by plotting data
+    \item If relationship, can fit trend line and its equation (circled items)
+    \item Use equation to calculate unknown values (orange rectangle) 
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Calculating Flood Event Frequency}
+  \begin{minipage}{.5\textwidth}
+    \begin{tabular}{r r}
+      Year & Discharge (cfs) \\ \hline
+      2009 & 14.4            \\
+      2010 & 10.2            \\
+      2011 & 18.6            \\
+      2012 & 12.5            \\
+      2013 & 16.3            \\
+      2014 & 13.5            \\
+      2015 & 12.9            \\
+      2016 & 14.5            \\
+      2017 & 9.17            \\
+      2018 & 11.2            \\
+      2019 & 13.2            \\ \hline
+    \end{tabular}
+
+    \scriptsize  Pearce Brook at Route 1 at Houlton, Maine
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    \small 
+    The table presents data on the maximum measured discharge in Pearce Brook over one 'water year' (or peak annual discharge). To estimate flood frequency (how likely a discharge will be exceeded), the data is:
+    \begin{itemize}
+    \item Rank the peak annual discharges
+    \item Calculate a recurrence interval for each year
+    \item Plot recurrence interval vs. discharge
+    \item Fit best-fit line to data on plot
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Ranking the Data}
+  \begin{minipage}{.5\textwidth}
+    \begin{tabular}{r r r}
+      Year & Q (cfs) & Rank\\ \hline
+      2009 & 14.4    & 4  \\
+      2010 & 10.2    & 10 \\
+      2011 & 18.6    & 1  \\
+      2012 & 12.5    & 8  \\
+      2013 & 16.3    & 2  \\
+      2014 & 13.5    & 5  \\
+      2015 & 12.9    & 7  \\
+      2016 & 14.5    & 3  \\
+      2017 & 9.17    & 11 \\
+      2018 & 11.2    & 9  \\
+      2019 & 13.2    & 6  \\ \hline
+    \end{tabular}
+
+    \scriptsize  Pearce Brook at Route 1 at Houlton, Maine
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    The data are ranked by assigning a whole number, with one (1) assigned to the largest peak discharge, two (2) for the second largest, and so on. In this case there are a total of eleven events ranked from 1 (most discharge) to 11 (least discharge).
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Calculate Recurrence Interval}
+  \begin{minipage}{.5\textwidth}
+    \begin{tabular}{r r r r}
+      Year & Q (cfs) & Rank & RI\\ \hline
+      2009 & 14.4    & 4 & 3\\
+      2010 & 10.2    & 10& 1.2\\
+      2011 & 18.6    & 1 & 12\\
+      2012 & 12.5    & 8 & 1.5\\
+      2013 & 16.3    & 2 & 6\\
+      2014 & 13.5    & 5 & 2.4\\
+      2015 & 12.9    & 7 & 1.7\\
+      2016 & 14.5    & 3 & 4\\
+      2017 & 9.17    & 11& 1.1\\
+      2018 & 11.2    & 9 & 1.3\\
+      2019 & 13.2    & 6 & 2\\ \hline
+    \end{tabular}
+
+    \scriptsize  Pearce Brook at Route 1 at Houlton, Maine
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    The recurrence interval (RI) is the average time between discharge events of a specified size. If the RI = 5 years for a discharge of 200 $ft^3 \over sec$, that suggests an event at or greater than 200 cfs will occur, on average, every 5 years.
+
+    The RI is calculated using the rank of an event and the total number (n) of events:
+    \begin{equation}
+      R.I. = \frac{n+1}{rank}
+    \end{equation}
+    In the example, n=11;
+    \begin{equation}
+      R.I. = \frac{12}{rank}
+    \end{equation}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Plot Data Using Log-Log Chart}
+  \begin{minipage}{.5\textwidth}
+    \includegraphics[width=\textwidth]{./example_riv_chart.png}
+  \end{minipage}
+  \begin{minipage}{.48\textwidth}
+    \begin{itemize}
+    \item Plot data, Recurrence Interval (x-axis) vs. Discharge (y-axis)
+    \item Transform x and y axes to log scales,
+      \begin{itemize}
+      \item circled items used to change scale
+      \item note distorted scales in the graph
+      \item visually review to ensure all data plotted, may need to change 'max' or 'min' in axes
+      \end{itemize}
+    \item Fit line/curve to data to project to higher values
+      \begin{itemize}
+      \item black lines are hand-drawn through data
+      \item orange star; projected discharge for 20 year flood
+      \end{itemize}
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\end{document}

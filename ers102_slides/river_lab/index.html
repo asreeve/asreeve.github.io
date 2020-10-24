@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orga2da699" data-background="slides/rivers_beamer_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga2da699">The Crooked River</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s01.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb28ae1c" data-background="slides/rivers_beamer_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb28ae1c">Basin Area: Discharge Correlation</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s02.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-org4574b0a" data-background="slides/rivers_beamer_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4574b0a">Calculating Flood Event Frequency</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s03.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-org6adc0ec" data-background="slides/rivers_beamer_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org6adc0ec">Ranking the Data</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s04.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfe25365" data-background="slides/rivers_beamer_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfe25365">Calculate Recurrence Interval</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s05.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-orgff8353b" data-background="slides/rivers_beamer_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgff8353b">Plot Data Using Log-Log Chart</h2>
+<p class ='fragment' data-audio-src='audio/river_lab_s06.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-org911a422" data-background="gifs/google_earth_loadfile.gif" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org911a422">Loading a KML file into Google Earth</h2>
+<p class ='fragment' data-audio-src='audio/google_earth_loadfile.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc1953b5" data-background="gifs/google_earth_profile.gif" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc1953b5">Creating a Profile in Google Earth</h2>
+<p class ='fragment' data-audio-src='audio/google_earth_profile.ogg'>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd49416b" data-background="gifs/google_earth_morph.gif" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgd49416b">Measuring Landscape Features in Google Earth</h2>
+<p class ='fragment' data-audio-src='audio/google_earth_morph.ogg'>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
