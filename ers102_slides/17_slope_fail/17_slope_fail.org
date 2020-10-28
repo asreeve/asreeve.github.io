@@ -139,3 +139,7 @@
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+* Quiz
+
+#+REVEAL_HTML: <script data-quiz="slope_fail_quiz" src="quiz/slope_fail.js"> </script>
