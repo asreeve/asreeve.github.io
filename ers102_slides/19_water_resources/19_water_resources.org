@@ -1,0 +1,131 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Water as a Resource
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s01.ogg">
+* USA (and Maine) Water Use
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s02.ogg">
+* Water Reservoirs
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s03.ogg">
+* General Residence Times of Water
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s04.ogg">
+* Sources of Drinking Water
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s05.ogg">
+* Water Balance
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s06.ogg">
+* Drainage Basins
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s07.ogg">
+* Drainage Basins
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s08.ogg">
+* Drainage Basins
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s09.ogg">
+* Drainage Basins
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s10.ogg">
+* Water Balance
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s11.ogg">
+* Allocation of Rainfall
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s12.ogg">
+* Recharge in Urban Settings
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_res_s13.ogg">
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_resources_013.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+* Quiz
+
+#+REVEAL_HTML: <script data-quiz="water_res_quiz" src="quiz/water_res.js"> </script>
+  
+
