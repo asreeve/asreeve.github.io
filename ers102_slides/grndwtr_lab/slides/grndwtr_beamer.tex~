@@ -1,0 +1,151 @@
+
+\providecommand{\pdfxopt}{a-1b,mathxmp}
+
+%\documentclass[10pt]{article}
+%\usepackage{beamerarticle}
+\documentclass[ignorenonframetext,aspectratio=169]{beamer}
+
+\input{/home/asreeve/current/tex_style/preamble_102}
+\usepackage{cancel}
+
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[square]
+\setbeamercolor*{enumerate item}{fg=red,bg=blue}
+\setbeamercolor*{enumerate subitem}{fg=blue,bg=red}
+
+\begin{document}
+
+\begin{frame}{Groundwater Flow Equations}
+  Darcy's Law relates groundwater discharge (Q) to hydraulic conductivity (K), hydraulic gradient (I), and cross section area (A) that groundwater flows through: 
+  \begin{equation*}
+    Q=-K \cdot A \cdot I
+  \end{equation*}
+  Rearranging Darcy's Law:
+  \begin{equation*}
+    K=\frac{-Q}{A \cdot I}
+  \end{equation*}
+
+  Darcy created this law based on observations of water flowing through a column of sediments. In this lab, a Darcy Tube will be used to calculate the hydraulic conductivity, a measure of permeability, of silty sand.
+\end{frame}
+
+\begin{frame}{The Darcy Tube}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/darcy_tube_intro.pdf}
+    \end{center}
+    \small{Example calculations for a Darcy Tube.}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+    \item Hydraulic Gradient [i]
+      $ i = \frac{\Delta h}{\Delta l} = \frac{4 cm}{44 cm}$
+    \item Cross-sectional area [A], \\
+      for circle:
+      $A=\pi \times r^2 = \pi \times (15 cm)^2$
+    \item Discharge [Q], volume water passing through A over some time
+      $Q=\frac{V_{water}}{t} = \frac{(3 cm)^3}{2.5 min}$
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+\begin{frame}{Three point problem \tiny hydraulic head}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/3PntProblem_l1.pdf}
+
+      \small Wells at brown squares with inscribed circles
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+      \item Image shows map view of three wells
+      \item Wells measure the water level (hydraulic head) \emph{at the opening in well}
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Three point problem \tiny hydraulic head}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/3PntProblem_l2.pdf}
+
+      \small Wells at brown squares with inscribed circles
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+    \item Hydraulic head is measure of water's mechanical energy
+    \item Elevation of water in open tube
+    \item Relative to consistent datum
+    \item Typically determined from water depth (w/ known well elevation)
+    \item ToP=Top of Pipe (or well)
+    \item Hyd.Head=ToP-WaterDepth=24 cm 
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Three point problem \tiny estimating position of equipotential}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/3PntProblem_l3.pdf}
+
+      \small Wells at brown squares with inscribed circles
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+    \item Three points define a plane
+    \item Can define line of equal hydraulic head on plane
+      \begin{itemize}
+      \item ID wells with high and low hydr. head
+      \item Calc. where middle hydr.head value falls b/w these values
+      \item In example, 21 is 3/4 distance between 20 and 24
+      \item Measure proportional distance b/w wells (orange line)
+      \end{itemize}
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Three point problem \tiny estimating position of equipotential}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/3PntProblem_l4.pdf}
+
+      \small Wells at brown squares with inscribed circles
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+    \item Connect line from well w/ middle hydr. head value to interpolated distance (orange swirl)
+    \item This is n equipotential, a line of equal hydr. head
+    \item Analogous to contour line (contouring hydr. head values)
+    \item Groundwater flow perpendicular to equipotential
+    \item Groundwater flow from high to low hydr. head
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Three point problem \tiny Calculating hydraulic gradient}
+  \begin{minipage}{.55\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{../../figs/3PntProblem_l5.pdf}
+
+      \small Wells at brown squares with inscribed circles
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{.43\textwidth}
+    \begin{itemize}
+    \item The hydraulic gradient drives flow
+    \item Max. gradient in direction of flow
+    \item Hydr. gradient, change in hydr. head with distance ($\frac{\Delta h}{\Delta l}$)
+      \begin{itemize}
+      \item Measure from well to equipotential in direction of flow
+      \item Convert map distances to real distances
+      \item Convert lengths ($\Delta h$ and $\Delta l$) to same units
+      \end{itemize}
+    \item This gradient than used in groundwater flow rates calculations
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\end{document}

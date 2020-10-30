@@ -1,0 +1,19 @@
+* Groundwater Flow Equations
+
+* The Darcy Tube
+
+* Three point problem
+hydraulic head
+
+* Three point problem
+hydraulic head
+
+* Three point problem
+estimating position of equipotential
+
+* Three point problem
+estimating position of equipotential
+
+* Three point problem
+Calculating hydraulic gradient
+
