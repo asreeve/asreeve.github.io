@@ -110,3 +110,7 @@
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/absolute_time_s11.ogg">
  
+* Quiz
+
+#+REVEAL_HTML: <script data-quiz="abs_time_quiz" src="quiz/abs_time.js"> </script>
+
