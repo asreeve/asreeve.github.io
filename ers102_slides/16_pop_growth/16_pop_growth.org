@@ -128,3 +128,7 @@
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
  
+* Quiz
+
+#+REVEAL_HTML: <script data-quiz="pop_growth_quiz" src="quiz/pop_growth.js"> </script>
+
