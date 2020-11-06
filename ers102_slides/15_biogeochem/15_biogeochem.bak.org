@@ -1,5 +1,5 @@
-#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
 #+REVEAL_ROOT: ../reveal
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
 #+REVEAL_HLEVEL: 1
 #+REVEAL_THEME: blood
 #+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
@@ -13,92 +13,91 @@
 #+REVEAL_EXTRA_CSS: ../style1.css
 * Chemicals Needed for Life
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_000.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s01.ogg">
+ 
 * Chemicals Needed for Life
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_001.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s02.ogg">
+ 
 * Carbon Cycle
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_002.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s03.ogg">
+ 
 * Carbon Cycle
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_003.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s04.ogg">
+ 
 * Nitrogen Cycle
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_004.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s05.ogg">
+ 
 * Nitrogen Cycle
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_005.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s06.ogg">
+ 
 * Phosphorous Cycle
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_006.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s07.ogg">
-* <image: DeviceRGB, width 2048, height 1536, bpc 8>  :PROPERTIES:
-  :reveal_background_size: 1100px 
+ 
+* Carnivorous Plant, nutrient poor conditions
+  :PROPERTIES:
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_007.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s08.ogg">
+ 
 * Cultural Eutrophication: Nutrients in Water
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_008.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s09.ogg">
+ 
 * Exotic Species
   :PROPERTIES:
-  :reveal_background_size: 1100px 
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_009.png
   :reveal_background_trans: slide
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s10.ogg">
-* Study Guide
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/biogeochem_010.png
-  :reveal_background_trans: slide
-  :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
-
-* Quiz
-
-#+REVEAL_HTML: <script data-quiz="biogeochem_quiz" src="quiz/biogeochem.js"> </script>
