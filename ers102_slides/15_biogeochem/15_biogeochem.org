@@ -67,8 +67,9 @@
   :END:
  
 #+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/biogeochem_s07.ogg">
-* <image: DeviceRGB, width 2048, height 1536, bpc 8>  :PROPERTIES:
-  :reveal_background_size: 1100px 
+* Carnivorous Plant, nutrient poor conditions
+  :PROPERTIES:
+  :reveal_background_size: 1100px
   :reveal_background: slides/biogeochem_007.png
   :reveal_background_trans: slide
   :END:
