@@ -1,0 +1,175 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Water Properties
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s01.ogg">
+* Units of Measurement
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s02.ogg">
+* Water Chemistry Parameters
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s03.ogg">
+* Dissolution and Complexation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s04.ogg">
+* Surface Processes
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s05.ogg">
+* Groundwater Pollution
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s06.ogg">
+* Cancer Risk
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s07.ogg">
+* What controls chemical movement?
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s08.ogg">
+* Diffusion and Dispersion
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s09.ogg">
+* Diffusion Animation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: video/diffuse.gif
+  :reveal_background_trans: slide
+  :END:
+ 
+* Mixing (Rubber Ducky Dispersion)
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s11.ogg">
+* Love Canal: Start
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s12.ogg">
+* Love Canal: Background
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s13.ogg">
+* Love Canal: Investigation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_013.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s14.ogg">
+* Love Canal: Gains Notoriety
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_014.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s15.ogg">
+* Love Canal: Media Attention
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_015.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s16.ogg">
+* Love Canal: Aftermath
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_016.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s17.ogg">
+* Love Canal: Aftermath
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_017.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s18.ogg">
+* Maine Superfund Sites
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_018.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/water_chem_s19.ogg">
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/water_chem_019.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+* Quiz
+ 
+#+REVEAL_HTML: <script data-quiz="water_chem_quiz" src="quiz/water_chem.js"> </script>
