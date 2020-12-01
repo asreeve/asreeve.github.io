@@ -11,124 +11,15 @@
 #+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
 #+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
 #+REVEAL_EXTRA_CSS: ../style1.css
-* <image: DeviceRGB, width 9, height 9, bpc 8>  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_000.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s01.ogg">
-* Climate Factors
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_001.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s02.ogg">
-* Milankovitch Cycles
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_002.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s03.ogg">
-* Milankovitch Cycle Orbital Parameters
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_003.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s04.ogg">
-* Milankovitch Cycle and Climate Proxies
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_004.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s05.ogg">
-* Greenhouse Effect
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_005.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s06.ogg">
-* Components of Earth’s Energy Budget, Feedbacks, Timescales of
-Impacts
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_006.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s07.ogg">
-* <image: DeviceRGB, width 9, height 9, bpc 8>  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_007.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s08.ogg">
-* Environmental Proxies for Past Change
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_008.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s09.ogg">
-* Recent & Historic Greenhouse Gas Measurements
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_009.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s10.ogg">
-* USA Temperatures Over Last Century.
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_010.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s11.ogg">
-* Lake Ice Thaw Dates.
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_011.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s12.ogg">
-* Change in Sea Ice
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_012.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s13.ogg">
-* Leaf bloom dates
-  :PROPERTIES:
-  :reveal_background_size: 1100px 
-  :reveal_background: slides/climate_chng_013.png
-  :reveal_background_trans: slide
-  :END:
- 
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s14.ogg">
-* <image: DeviceRGB, width 9, height 9, bpc 8>  :PROPERTIES:
+
+* Section 3
+  :PROPERTIES:  
   :reveal_background_size: 1100px 
   :reveal_background: slides/climate_chng_014.png
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s15.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s15.ogg">
 * Emission Rates for Greenhouse Gasses
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -136,7 +27,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s16.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s16.ogg">
 * Carbon Cycle Fluxes & Reservoirs
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -144,7 +35,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s17.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s17.ogg">
 * Atmospheric Methane Fluxes & Reservoirs
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -152,7 +43,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s18.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s18.ogg">
 * Nitrogen Cycle Fluxes & Reservoirs
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -160,14 +51,15 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s19.ogg">
-* <image: DeviceRGB, width 9, height 9, bpc 8>  :PROPERTIES:
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s19.ogg">
+* Section 4
+  :PROPERTIES:
   :reveal_background_size: 1100px 
   :reveal_background: slides/climate_chng_019.png
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s20.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s20.ogg">
 * Projected (computer modeled) CO2 Conc. & Temp.
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -175,7 +67,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s21.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s21.ogg">
 * Consequences of Warming?
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -183,7 +75,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s22.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s22.ogg">
 * Projected Forest Change
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -191,7 +83,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s23.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s23.ogg">
 * Projected Sea Level Change
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -199,7 +91,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s24.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s24.ogg">
 * Ocean Acidification
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -207,7 +99,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s25.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s25.ogg">
 * How Can We Deal with Warming?
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -215,7 +107,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s26.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s26.ogg">
 * Carbon Emitted & Projected ’Committed’ Emissions.
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -223,7 +115,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s27.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s27.ogg">
 * Global Warming: Basics Facts
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -231,7 +123,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s28.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s28.ogg">
 * What people think (and say) about climate change
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -239,7 +131,7 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s29.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/climate_chng_s29.ogg">
 * Review Questions
   :PROPERTIES:
   :reveal_background_size: 1100px 
@@ -247,4 +139,10 @@ Impacts
   :reveal_background_trans: slide
   :END:
  
-#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle_s30.ogg">
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+* Quiz: Atmosphere
+#+REVEAL_HTML: <script data-quiz="atmosphere_quiz" src="quiz/atmosphere.js"> </script>
+
+* Quiz: Climate Change
+#+REVEAL_HTML: <script data-quiz="climate_chng_quiz" src="quiz/climate_chng.js"> </script>
