@@ -1,0 +1,62 @@
+* <image: DeviceRGB, width 9, height 9, bpc 8>
+* Units of Energy
+
+* Energy Sources and Shift in Human Use
+
+* Energy Sources-Coal
+
+* Energy Sources-Petroleum
+
+* Energy Sources-Natural Gas
+
+* Energy Sources-Renewables
+
+* Energy Sources-Nuclear
+
+* Figure: World energy consumption
+
+* Figure: World renewable and nuclear energy consumption
+
+* <image: DeviceRGB, width 720, height 606, bpc 8>
+* Top 5 Total Energy Consumers
+
+* Energy Subsidies
+
+* Some Energy Milestones
+
+* <image: DeviceRGB, width 9, height 9, bpc 8>
+* Coal as an Energy Source
+
+* Coalbed Methane
+
+* Burning Coal
+
+* Impact on Landscapes
+
+* Clean Coal
+
+* <image: DeviceRGB, width 9, height 9, bpc 8>
+* Petroleum-Basics
+
+* Oil and Gas Environmental Issues
+
+* <image: DeviceRGB, width 9, height 9, bpc 8>
+* Nuclear Energy
+
+* Nuclear Reactors
+
+* Uranium Deposits
+
+* Environmental & Other Factors
+
+* Natural Forces-Solar
+
+* Natural Forces-Geothermal
+
+* Natural Forces-Wind
+
+* Natural Forces
+
+* <image: DeviceRGB, width 904, height 617, bpc 8>
+* Study Guide
+
