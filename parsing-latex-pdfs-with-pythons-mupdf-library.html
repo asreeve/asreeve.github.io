@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:8000/parsing-latex-pdfs-with-pythons-mupdf-library.html">
+<link rel="canonical" href="/parsing-latex-pdfs-with-pythons-mupdf-library.html">
 
         <meta name="author" content="asreeve" />
         <meta name="keywords" content="python,slideshow" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="WaDa" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Parsing latex pdf&#39;s with python&#39;s mupdf library"/>
-        <meta property="og:url" content="http://localhost:8000/parsing-latex-pdfs-with-pythons-mupdf-library.html"/>
+        <meta property="og:url" content="/parsing-latex-pdfs-with-pythons-mupdf-library.html"/>
         <meta property="og:description" content="Introduction In the Fall of 2020, after making videos of lectures for a class I taught, I was required to switch my entire class to an all online format. All my previous slides were made using LaTeX&#39;s beamer package. I needed to either redo all this content or repurposed this …"/>
         <meta property="article:published_time" content="2020-12-13" />
             <meta property="article:section" content="Converting PDF slides to PNGs" />
@@ -29,12 +29,12 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.darkly.min.css" type="text/css"/>
-    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://localhost:8000/theme/css/pygments/native.css" rel="stylesheet">
-        <link href="http://localhost:8000/theme/css/html4css1.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="/theme/css/html4css1.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
 
 
@@ -50,15 +50,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://localhost:8000/" class="navbar-brand">
+            <a href="/" class="navbar-brand">
 WaDa            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://localhost:8000/pages/about-me.html">
+                         <li><a href="/pages/about-me.html">
                              About Me
                           </a></li>
-                         <li><a href="http://localhost:8000/pages/classes.html">
+                         <li><a href="/pages/classes.html">
                              Classes
                           </a></li>
             </ul>
@@ -72,7 +72,7 @@ WaDa            </a>
 <!-- Banner -->
 <style>
 	#banner{
-	    background-image:url("http://localhost:8000/images/logo4.png");
+	    background-image:url("/images/logo4.png");
 	}
 </style>
 
@@ -93,7 +93,7 @@ WaDa            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://localhost:8000/parsing-latex-pdfs-with-pythons-mupdf-library.html"
+                    <a href="/parsing-latex-pdfs-with-pythons-mupdf-library.html"
                        rel="bookmark"
                        title="Permalink to Parsing latex pdf's with python's mupdf library">
                         Parsing latex pdf's with python's mupdf library
@@ -114,9 +114,9 @@ WaDa            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://localhost:8000/tag/python.html">python</a>
+	<a href="/tag/python.html">python</a>
         /
-	<a href="http://localhost:8000/tag/slideshow.html">slideshow</a>
+	<a href="/tag/slideshow.html">slideshow</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -133,7 +133,7 @@ WaDa            </a>
 </div>
 <div class="section" id="automating-slide-conversion">
 <h2>Automating slide conversion</h2>
-<p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) file. The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png).</p>
+<p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) file. The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png). This code below is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -172,7 +172,8 @@ WaDa            </a>
 36
 37
 38
-39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copyfile</span>
 <span class="kn">import</span> <span class="nn">fitz</span>
 
@@ -184,36 +185,36 @@ WaDa            </a>
                 <span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="o">=</span><span class="n">pdf_file</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lect_path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">split_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">        split pdf pages into seperate png images</span>
-<span class="sd">        dest: location of pdf file</span>
-<span class="sd">        self.slide_titles: stores slide header from the LaTeX beamer page for future use</span>
-<span class="sd">        self.slide_num: stores the slide number for future use</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="n">dest</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;slides&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="p">)</span>
-        <span class="n">pdf_obj</span><span class="o">=</span><span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slide_titles</span><span class="o">=</span><span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">slide_num</span><span class="o">=</span><span class="p">[]</span>
-        <span class="n">slide_base</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">page</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pdf_obj</span><span class="p">):</span>
-                <span class="n">pgtxt</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span>
-                <span class="c1"># read in page text and save line (2nd from back). The first item in this list is the page number</span>
-                <span class="n">pagenum</span><span class="o">=</span><span class="n">pgtxt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">slide_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">pagenum</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-                <span class="c1"># get the header. If no header exists in the beamer file, incorrect data will be saved here</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">slide_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">getText</span><span class="p">(</span><span class="s1">&#39;blocks&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
-                <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">                matrix represents the first two columns of a 3 by 3 matrix. This is used to magnify,</span>
-<span class="sd">                shear and rotate the page information in the line below, the matrix term multiplies</span>
-<span class="sd">                the pages data by 3, magnifying it and making the pixelmap larger, increasing resolution.</span>
+        <span class="k">def</span> <span class="nf">split_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+            <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">                split pdf pages into seperate png images</span>
+<span class="sd">                dest: location of pdf file</span>
+<span class="sd">                self.slide_titles: stores slide header from the LaTeX beamer page for future use</span>
+<span class="sd">                self.slide_num: stores the slide number for future use</span>
 <span class="sd">                &#39;&#39;&#39;</span>
-                <span class="n">png</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">getPixmap</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-                <span class="n">png</span><span class="o">.</span><span class="n">pillowWrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="si">}</span><span class="s2">/slides/</span><span class="si">{</span><span class="n">slide_base</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
- <span class="n">pdf_obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="n">dest</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;slides&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="p">)</span>
+                <span class="n">pdf_obj</span><span class="o">=</span><span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">slide_titles</span><span class="o">=</span><span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">slide_num</span><span class="o">=</span><span class="p">[]</span>
+                <span class="n">slide_base</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pdf_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">page</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pdf_obj</span><span class="p">):</span>
+                        <span class="n">pgtxt</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span>
+                        <span class="c1"># read in page text and save line (2nd from back).</span>
+                        <span class="c1"># The first item in this list is the page number</span>
+                        <span class="n">pagenum</span><span class="o">=</span><span class="n">pgtxt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">slide_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">pagenum</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                        <span class="c1"># get the header. If no header exists in the beamer file, incorrect data will be saved here</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">slide_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">getText</span><span class="p">(</span><span class="s1">&#39;blocks&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
+                        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">                        matrix represents the first two columns of a 3 by 3 matrix. This is used to magnify,</span>
+<span class="sd">                        shear and rotate the page information in the line below, the matrix term multiplies</span>
+<span class="sd">                        the pages data by 3, magnifying it and making the pixelmap larger, increasing resolution.</span>
+<span class="sd">                        &#39;&#39;&#39;</span>
+                        <span class="n">png</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">getPixmap</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="n">png</span><span class="o">.</span><span class="n">pillowWrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="si">}</span><span class="s2">/slides/</span><span class="si">{</span><span class="n">slide_base</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+        <span class="n">pdf_obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
-</td></tr></table><p>This code is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
-</div>
+</td></tr></table></div>
 
             </div>
             <!-- /.entry-content -->
@@ -241,13 +242,13 @@ WaDa            </a>
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
   <ul class="list-group" id="categories">
     <li class="list-group-item">
-      <a href="http://localhost:8000/category/blog-envirogeo.html"><i class="fa fa-folder-open fa-lg"></i>Blog, Enviro.Geo.</a>
+      <a href="/category/blog-envirogeo.html"><i class="fa fa-folder-open fa-lg"></i>Blog, Enviro.Geo.</a>
     </li>
     <li class="list-group-item">
-      <a href="http://localhost:8000/category/blog-python.html"><i class="fa fa-folder-open fa-lg"></i>Blog, Python</a>
+      <a href="/category/blog-python.html"><i class="fa fa-folder-open fa-lg"></i>Blog, Python</a>
     </li>
     <li class="list-group-item">
-      <a href="http://localhost:8000/category/converting-pdf-slides-to-pngs.html"><i class="fa fa-folder-open fa-lg"></i>Converting PDF slides to PNGs</a>
+      <a href="/category/converting-pdf-slides-to-pngs.html"><i class="fa fa-folder-open fa-lg"></i>Converting PDF slides to PNGs</a>
     </li>
   </ul>
 </li>
@@ -272,16 +273,16 @@ WaDa            </a>
       </div>
    </div>
 </footer>
-<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
+<script src="/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
+<script src="/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://localhost:8000/theme/js/respond.min.js"></script>
+<script src="/theme/js/respond.min.js"></script>
 
 
-    <script src="http://localhost:8000/theme/js/bodypadding.js"></script>
+    <script src="/theme/js/bodypadding.js"></script>
 
 
 </body>
