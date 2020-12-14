@@ -1,0 +1,13 @@
+======
+ WaDa
+======
+
+:title: WaDa Home
+:author: asreeve
+:save_as: index.html
+
+The water sciences increasingly rely on the interpretation of large data sets. The increasing size of data sets is driven by the use of new sensors, satellite and other spatial information, and the use of computer models that all create large amounts of data. In this site, I will share course materials I have developed related to environmental geology, water sciences, and the tools used by hydrologists use to evaluate water flow and chemistry. More in depth course materials and other posts will focus on hydrogeology and my use of the Python scripting language to complete my work.
+
+Hydrogeology is the study of water in geologic materials. Hydrogeologists evaluate the flow of water through geologic materials and the chemistry of water found in the subsurface. Groundwater cannot usually be observed and wells are used to collect water samples and measure the hydraulic head (a measure of energy) in geologic materials. In addition to data collection typically utilizing monitoring wells, hydrogeologists also apply a variety of other tools; including computer models, laboratory-based experiment, and geophysical instruments to evaluate groundwater systems.
+
+The hydrogeology program within the School of Earth and Climate Sciences at the University of Maine is led by Andrew Reeve. Information on Reeve's research and teaching activities can be reviewed by using the tabs at the top of this page. U.Maine offers an excellent environment to study aspects of environmental geoscience. Courses directly related to hydrology are offered in Earth and Climate Sciences and Civil and Environmental Engineering. My interests are slanted toward the computer simulation of groundwater flow and transport processes with a focus on wetland ecosystems.
