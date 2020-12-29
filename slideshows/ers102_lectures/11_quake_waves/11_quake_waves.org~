@@ -1,0 +1,121 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Earthquake Waves 1
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves 2
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves 3
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves (2-D S-wave)
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: video/Ondes_cisaillement_2d_20_petit.gif
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves (2-D P-wave)
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: video/Ondes_compression_2d_20_petit.gif
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves and Ground Motion
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves 6
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves 7
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Waves 8
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Seismic Stations Panama
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Earthquake Intensity Scales
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earthquakes_waves_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 

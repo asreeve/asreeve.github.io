@@ -1,0 +1,76 @@
+\begin{question}
+  What compounds are needed as inputs for photosynthesis?
+  \begin{choices}
+    \choice carbon dioxide and water
+    \choice oxygen and organic matter
+    \choice arsenic and sulfate
+    \choice fructose and oxalic acid
+    \choice quartz and hydrogen ion
+  \end{choices}
+\end{question}
+
+\begin{question}
+  What biological process releases $CO_2$ into the environment (reverse reaction of photosynthesis)?
+  \begin{choices}
+    \choice respiration
+    \choice carbonization
+    \choice sisehtnysotohp
+    \choice reduction
+    \choice hydrolosis
+  \end{choices}
+\end{question}
+
+\begin{question}
+  Which elements are typically the limiting nutrients in environmental systems on Earth?
+  \begin{choices}
+    \choice Carbon and oxygen
+    \choice Nitrogen and phosphorus
+    \choice Hydrogen and oxygen
+    \choice Calcium and iron
+    \choice Silicon and oxygen
+  \end{choices}
+\end{question}
+
+\begin{question}
+  What is a Redfield Ratio?
+  \begin{choices}
+    \choice the proportion of carbon, nitrogen and phosphorous found in marine plankton.
+    \choice a slope stability ratio used for risk assessment
+    \choice the proportion of organic matter found in soil
+    \choice the ratio of clay content in the A and B soil horizons
+    \choice a color ratio used to measure iron content in soil
+  \end{choices}
+\end{question}
+
+\begin{question}
+  Which of the following is \textbf{NOT} an important natural process in the Carbon Cyle?
+  \begin{choices}
+    \choice $CO_2$ uptake by oceans
+    \choice burial of organic matter
+    \choice photosynthesis
+    \choice out-gassing of carbon gasses from cooling magma
+    \choice ammonification
+  \end{choices}
+\end{question}
+
+\begin{question}
+  What human impact to the phosphorous cycle caused widespread algal blooms in rivers and lakes in the USA?
+  \begin{choices}
+    \choice the addition of phosphorous to laundry and dish-washing detergents
+    \choice burning of peat
+    \choice cement production
+    \choice release of coal dust during mining and transport to power plants
+    \choice addition of phosphorous to gasoline to improve engine performance
+  \end{choices}
+\end{question}
+
+\begin{question}
+  What is the limiting nutrient in most freshwater systems?
+  \begin{choices}
+    \choice nitrogen
+    \choice phosphorous
+    \choice carbon
+    \choice calcium
+    \choice aluminium
+  \end{choices}
+\end{question}

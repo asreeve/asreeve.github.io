@@ -1,0 +1,121 @@
+
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "How do ocean currents influence the global and local climate?",
+			"a": [
+				{"option": " Ocean currents transport heat, absorbed in ocean water, from warm to cool parts of the earth.", "correct": true},
+				{"option": " Ocean currents transport sediments to the ocean surface that consume oxygen during weathering reactions and release $CO_2$ to the atmosphere", "incorrect": false},
+                                {"option": " Ocean currents have little impact on the climate.", "incorrect": false},
+				{"option": " Ocean currents transport ozone, that is released to coastal areas, from the polar regions.", "incorrect": false},
+                                {"option": " Ocean currents transport algae, from deep in the ocean to shallow waters, that consume carbon dioxide and release oxygen to the atmosphere.", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "How does the 'greenhouse effect' work?",
+			"a": [
+				{"option": "greenhouse gasses undergo spontaneous fission, releasing heat during nuclear decay", "incorrect": false},
+				{"option": "long wave infrared radiation is absorbed by certain gasses and re-radiated back into the atmosphere, trapping heat.", "correct": true},
+                                {"option": "short wave UV radiation is absorbed more by surfaces in the presence of greenhouse gasses, enhancing black body radiation", "incorrect": false},
+				{"option": "greenhouse gasses are excellent insulators, preventing heat from being transported into space", "incorrect": false},
+                                {"option": "long wave infrared radiation shifts its frequency in the presence of greenhouse gasses, that increases their ability to heat gasses", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "What is the name for cycles influenced by orbital parameters (eccentricity, precession, and tilt) that influence long term (10,000 to 100,000's of years) changes in climate.",
+			"a": [
+				{"option": "Galileo cycles", "incorrect": false},
+				{"option": "Kepler cycles", "incorrect": false},
+                                {"option": "Aristotle cycle", "incorrect": false},
+				{"option": "Milankovitch cycles", "correct": true},
+                                {"option": "Metonic cycle", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "How do scientists determine past climates (before widespread human records)?",
+			"a": [
+				{"option": "through the use of 'rail guns' that allow scientist to send weather instruments back in time", "incorrect": false},
+				{"option": "careful separation of old water from oceans and measuring its temperature and chemistry", "incorrect": false},
+                                {"option": "by using satellites that can measure old light, allowing scientists to see the past", "incorrect": false},
+				{"option": "by carefully examining the genetic code of organisms like sharks and turtles, that likely where present in the past", "incorrect": false},
+                                {"option": "by measuring parameters 'recorded' in geologic and biological materials that have accumulated over long periods of time", "correct": true},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "What gas in the atmosphere is the most important 'greenhouse gas', accounting for most of the warming associated with these gasses.",
+			"a": [
+				{"option": " water vapor ($H_2O$)", "correct": true},
+				{"option": " methane ($CH_4$)", "incorrect": false},
+                                {"option": " chloroflourocarbons (CFC's)", "incorrect": false},
+				{"option": " nitrous oxide ($N_2O$)", "incorrect": false},
+                                {"option": " carbon dioxide ($CO_2$)", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "What is the primary cause behind current ocean acidification?",
+			"a": [
+				{"option": " Release of toxic chemical solvents into the oceans, like trichloroethylene, results in near-shore acidification", "incorrect": false},
+				{"option": " Increased groundwater discharge to the oceans drive acidification", "incorrect": false},
+                                {"option": " Human pollution, including acid rain, is acidifying the oceans", "incorrect": false},
+				{"option": " Increasing atmospheric CO2 is dissolved in water producing a weak acid", "correct": true},
+                                {"option": " Algae growth in oceans, stimulated by nutrients, produce oxygen that drives increasing acidification", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "How do scientist estimate past greenhouse gas concentrations many hundreds of years ago?",
+			"a": [
+				{"option": " By measuring the chemical makeup of deep ocean water.", "incorrect": false},
+				{"option": " By measuring the chemical composition of metamorphic rocks.", "incorrect": false},
+                                {"option": " Through analysis of gases transported into the deep earth through subduction.", "incorrect": false},
+				{"option": " By looking at plant fossils used ancient CFC's for photosynthesis.", "incorrect": false},
+                                {"option": " By measuring the concentrations of gases trapped in bubbles in ice cores collected from glaciers.", "correct": true},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "Which of the following is *not* a greenhouse gas strongly influenced by humans.",
+			"a": [
+				{"option": " nitrous oxide, N2O", "incorrect": false},
+				{"option": " methane, CH4", "incorrect": false},
+                                {"option": " nitrogen gas, N2", "correct": true},
+				{"option": " chlorofluorocarbons, CFCs", "incorrect": false},
+                                {"option": " carbon dioxide, CO2", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "When presenting a scientific (or other) argument, what is a 'false dichotomy'?",
+			"a": [
+				{"option": " excluding data that does not support your argument", "incorrect": false},
+				{"option": " punching someone in the nose when they say something you don't like", "incorrect": false},
+                                {"option": " cleverly packaging logic that is not correct", "incorrect": false},
+				{"option": " presenting a distraction that shifts attention", "incorrect": false},
+                                {"option": " incorrectly limiting choices", "correct": true},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "What percentage of the climate scientists believe that the climate is warming and that this is due to human activities?",
+			"a": [
+				{"option": " 50%", "incorrect": false},
+				{"option": " 90%", "correct": true},
+                                {"option": " 10%", "incorrect": false},
+				{"option": " 75%", "incorrect": false},
+                                {"option": " 20%", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},

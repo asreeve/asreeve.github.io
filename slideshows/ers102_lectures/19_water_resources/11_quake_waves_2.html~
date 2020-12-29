@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-org32679b0" data-background="slides/earthquakes_waves_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org32679b0">Earthquake Waves 1</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s01.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org87b30a6" data-background="slides/earthquakes_waves_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org87b30a6">Earthquake Waves 2</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s02.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org3c4eec9" data-background="slides/earthquakes_waves_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org3c4eec9">Earthquake Waves 3</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s03.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgfe5e63f" data-background="video/Ondes_cisaillement_2d_20_petit.gif" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfe5e63f">Earthquake Waves (2-D S-wave) <b><b>by: CDang (<img src="https://commons.wikimedia.org/wiki/File:Ondes_cisaillement_2d_20_petit.gif" alt="File:Ondes_cisaillement_2d_20_petit.gif" />)</b></b></h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s04.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org5c16688" data-background="video/Ondes_compression_2d_20_petit.gif" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org5c16688">Earthquake Waves (2-D P-wave) by: CDang (<img src="https://commons.wikimedia.org/wiki/File:Ondes_compression_2d_20_petit.gif" alt="File:Ondes_compression_2d_20_petit.gif" />)</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s05.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org5b6a07b" data-background="slides/earthquakes_waves_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org5b6a07b">Earthquake Waves and Ground Motion</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s06.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgefed073" data-background="slides/earthquakes_waves_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgefed073">Earthquake Waves 6</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s07.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org4294cce" data-background="slides/earthquakes_waves_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4294cce">Earthquake Waves 7</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s08.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org4df2e5c" data-background="slides/earthquakes_waves_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4df2e5c">Earthquake Waves 8</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s09.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgba74ebc" data-background="slides/earthquakes_waves_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgba74ebc">Seismic Stations Panama</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s10.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org18ba3c8" data-background="slides/earthquakes_waves_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org18ba3c8">Earthquake Intensity Scales</h2>
+<p class ="fragment" data-audio-src="audio/quake_waves_s11.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org2be931c" data-background="slides/earthquakes_waves_011.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org2be931c">Study Guide</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>

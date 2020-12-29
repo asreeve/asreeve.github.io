@@ -1,0 +1,70 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal.js
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal.js/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal.js/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal.js/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Earth’s Internal Structure
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s01.ogg">
+ 
+* Earth’s Internal Structure: How do know what’s inside the Earth?
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s02.ogg">
+ 
+* Waves from Earthquakes and Other Events
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s03.ogg">
+ 
+* Earthquake Waves
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s04.ogg">
+ 
+* Animation of seismic waves and Earth’s Structure
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/earth_internal_struct_s05.ogg">
+ 
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/earth_intern_struct_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+* Quiz
+#+REVEAL_HTML: <script data-quiz="earth_struct_quiz" src="quiz/earth_struct.js"> </script>
+ 

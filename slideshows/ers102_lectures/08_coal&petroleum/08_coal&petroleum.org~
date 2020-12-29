@@ -1,0 +1,133 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Coal formation: Environment
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s01.ogg">
+ 
+* Coal formation: Geologic Time
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s02.ogg">
+ 
+* Coal formation: Transformation from Plant Material
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s03.ogg">
+ 
+* Sulfur in Coal
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s04.ogg">
+ 
+* Petroleum Formation
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s05.ogg">
+ 
+* Petroleum and the Carbon Cycla
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s06.ogg">
+ 
+* Oil Traps
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s07.ogg">
+ 
+* Oil and Salt Domes
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s08.ogg">
+ 
+* Oil Wells near Denver, CO
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s09.ogg">
+ 
+* Oil development innovation
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s10.ogg">
+ 
+* Seismic reflection/Off-shore Oil
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s11.ogg">
+ 
+* Unconventional gas
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/coal_petrol_s12.ogg">
+ 
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px
+  :reveal_background: slides/coal&petroleum_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+ 
+* Quiz
+#+REVEAL_HTML: <script data-quiz="coal_petrol_quiz" src="quiz/coal_petrol.js"> </script>
+

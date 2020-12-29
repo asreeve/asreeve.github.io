@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orgee81976" data-background="slides/coal&amp;petroleum_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgee81976">Coal formation: Environment</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s01.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org2913f6d" data-background="slides/coal&amp;petroleum_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org2913f6d">Coal formation: Geologic Time</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s02.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgdeddd80" data-background="slides/coal&amp;petroleum_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgdeddd80">Coal formation: Transformation from Plant Material</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s03.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgaf76aab" data-background="slides/coal&amp;petroleum_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgaf76aab">Sulfur in Coal</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s04.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org789fcad" data-background="slides/coal&amp;petroleum_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org789fcad">Petroleum Formation</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s05.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org786f12f" data-background="slides/coal&amp;petroleum_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org786f12f">Petroleum and the Carbon Cycla</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s06.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org28a6e60" data-background="slides/coal&amp;petroleum_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org28a6e60">Oil Traps</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s07.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgc1751e2" data-background="slides/coal&amp;petroleum_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc1751e2">Oil and Salt Domes</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s08.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org479eccf" data-background="slides/coal&amp;petroleum_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org479eccf">Oil Wells near Denver, CO</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s09.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org7a27914" data-background="slides/coal&amp;petroleum_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org7a27914">Oil development innovation</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s10.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org12f1ffb" data-background="slides/coal&amp;petroleum_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org12f1ffb">Seismic reflection/Off-shore Oil</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s11.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-orgf69c001" data-background="slides/coal&amp;petroleum_011.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgf69c001">Unconventional gas</h2>
+<p class ="fragment" data-audio-src="audio/coal_petrol_s12.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org1c30ab9" data-background="slides/coal&amp;petroleum_012.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org1c30ab9">Study Guide</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org8e2ccde">
+<h2 id="org8e2ccde">Quiz</h2>
+<script data-quiz="coal_petrol_quiz" src="quiz/coal_petrol.js"> </script>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>

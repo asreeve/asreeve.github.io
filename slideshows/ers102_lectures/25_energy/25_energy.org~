@@ -1,0 +1,288 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Energy 
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s01.ogg">
+* Units of Energy
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s02.ogg">
+* Energy Sources and Shift in Human Use
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s03.ogg">
+* Energy Sources-Coal
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s04.ogg">
+* Energy Sources-Petroleum
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s05.ogg">
+* Energy Sources-Natural Gas
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s06.ogg">
+* Energy Sources-Renewables
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s07.ogg">
+* Energy Sources-Nuclear
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s08.ogg">
+* Figure: World energy consumption
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s09.ogg">
+* Figure: World renewable and nuclear energy consumption
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s10.ogg">
+* Global Energy Consumption
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s11.ogg">
+* Top 5 Total Energy Consumers
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s12.ogg">
+* Energy Subsidies
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s13.ogg">
+* Some Energy Milestones
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_013.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s14.ogg">
+* Energy from Coal
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_014.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s15.ogg">
+* Coal as an Energy Source
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_015.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s16.ogg">
+* Coalbed Methane
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_016.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s17.ogg">
+* Burning Coal
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_017.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s18.ogg">
+* Impact on Landscapes
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_018.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s19.ogg">
+* Clean Coal
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_019.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s20.ogg">
+* Energy from Hydrocarbons    
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_020.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s21.ogg">
+* Petroleum-Basics
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_021.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s22.ogg">
+* Oil and Gas Environmental Issues
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_022.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s23.ogg">
+* Nuclear and Renewable Energy
+  :PROPERTIES:  
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_023.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s24.ogg">
+* Nuclear Energy
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_024.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s25.ogg">
+* Nuclear Reactors
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_025.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s26.ogg">
+* Uranium Deposits
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_026.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s27.ogg">
+* Environmental & Other Factors
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_027.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s28.ogg">
+* Natural Forces-Solar
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_028.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s29.ogg">
+* Natural Forces-Geothermal
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_029.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s30.ogg">
+* Natural Forces-Wind
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_030.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s31.ogg">
+* Natural Forces
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_031.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s32.ogg">
+* Renewable use in Maine
+  :PROPERTIES:  
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_032.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/energy_s33.ogg">
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/energy_033.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+* Quiz
+#+REVEAL_HTML: <script data-quiz="energy_quiz" src="quiz/energy.js"> </script>  

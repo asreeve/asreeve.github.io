@@ -1,0 +1,21 @@
+tectonics_quiz={
+	"info": {
+		"name":    "",
+		"main":    "Time for a quiz! Test your knowledge",
+	},
+	"questions": [
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "Of the layers that make up the earth, which is composed entirely of liquid?",
+			"a": [
+				{"option": "Inner core", "incorrect": false},
+				{"option": "Upper mantle", "incorrect": false},
+				{"option": "Lower mantle", "incorrect": false},
+				{"option": "Outer core", "correct": true},
+				{"option": "Ocean crust", "incorrect": false}
+			],
+			"correct": "<p>Right! Why do scientists believe this?</p>",
+			"incorrect": "<p>No.</p>"
+		},
+	]
+}
+

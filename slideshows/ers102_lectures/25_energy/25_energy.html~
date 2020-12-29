@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-orgb3e4d81" data-background="slides/energy_000.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb3e4d81">Energy</h2>
+<p class ="fragment" data-audio-src="audio/energy_s01.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgf727f13" data-background="slides/energy_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgf727f13">Units of Energy</h2>
+<p class ="fragment" data-audio-src="audio/energy_s02.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org0c4298c" data-background="slides/energy_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org0c4298c">Energy Sources and Shift in Human Use</h2>
+<p class ="fragment" data-audio-src="audio/energy_s03.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orge898e8f" data-background="slides/energy_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orge898e8f">Energy Sources-Coal</h2>
+<p class ="fragment" data-audio-src="audio/energy_s04.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgf3d0775" data-background="slides/energy_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgf3d0775">Energy Sources-Petroleum</h2>
+<p class ="fragment" data-audio-src="audio/energy_s05.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org67354bb" data-background="slides/energy_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org67354bb">Energy Sources-Natural Gas</h2>
+<p class ="fragment" data-audio-src="audio/energy_s06.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org58834ea" data-background="slides/energy_006.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org58834ea">Energy Sources-Renewables</h2>
+<p class ="fragment" data-audio-src="audio/energy_s07.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgd2baaac" data-background="slides/energy_007.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgd2baaac">Energy Sources-Nuclear</h2>
+<p class ="fragment" data-audio-src="audio/energy_s08.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org0ed3b66" data-background="slides/energy_008.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org0ed3b66">Figure: World energy consumption</h2>
+<p class ="fragment" data-audio-src="audio/energy_s09.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orga149d5b" data-background="slides/energy_009.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga149d5b">Figure: World renewable and nuclear energy consumption</h2>
+<p class ="fragment" data-audio-src="audio/energy_s10.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org4ffdea1" data-background="slides/energy_010.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4ffdea1">Global Energy Consumption</h2>
+<p class ="fragment" data-audio-src="audio/energy_s11.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org045396c" data-background="slides/energy_011.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org045396c">Top 5 Total Energy Consumers</h2>
+<p class ="fragment" data-audio-src="audio/energy_s12.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org02aae89" data-background="slides/energy_012.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org02aae89">Energy Subsidies</h2>
+<p class ="fragment" data-audio-src="audio/energy_s13.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org2a52627" data-background="slides/energy_013.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org2a52627">Some Energy Milestones</h2>
+<p class ="fragment" data-audio-src="audio/energy_s14.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgf8b887c" data-background="slides/energy_014.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgf8b887c">Energy from Coal</h2>
+<p class ="fragment" data-audio-src="audio/energy_s15.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orga71e989" data-background="slides/energy_015.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orga71e989">Coal as an Energy Source</h2>
+<p class ="fragment" data-audio-src="audio/energy_s16.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org160e4e1" data-background="slides/energy_016.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org160e4e1">Coalbed Methane</h2>
+<p class ="fragment" data-audio-src="audio/energy_s17.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org72b23f6" data-background="slides/energy_017.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org72b23f6">Burning Coal</h2>
+<p class ="fragment" data-audio-src="audio/energy_s18.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgfb06ed1" data-background="slides/energy_018.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfb06ed1">Impact on Landscapes</h2>
+<p class ="fragment" data-audio-src="audio/energy_s19.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org0500d57" data-background="slides/energy_019.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org0500d57">Clean Coal</h2>
+<p class ="fragment" data-audio-src="audio/energy_s20.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org19e9c1e" data-background="slides/energy_020.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org19e9c1e">Energy from Hydrocarbons</h2>
+<p class ="fragment" data-audio-src="audio/energy_s21.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgffcb8f2" data-background="slides/energy_021.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgffcb8f2">Petroleum-Basics</h2>
+<p class ="fragment" data-audio-src="audio/energy_s22.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgd415a40" data-background="slides/energy_022.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgd415a40">Oil and Gas Environmental Issues</h2>
+<p class ="fragment" data-audio-src="audio/energy_s23.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgade87c3" data-background="slides/energy_023.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgade87c3">Nuclear and Renewable Energy</h2>
+<p class ="fragment" data-audio-src="audio/energy_s24.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgacc0e30" data-background="slides/energy_024.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgacc0e30">Nuclear Energy</h2>
+<p class ="fragment" data-audio-src="audio/energy_s25.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org62b67f3" data-background="slides/energy_025.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org62b67f3">Nuclear Reactors</h2>
+<p class ="fragment" data-audio-src="audio/energy_s26.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org2db2182" data-background="slides/energy_026.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org2db2182">Uranium Deposits</h2>
+<p class ="fragment" data-audio-src="audio/energy_s27.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org3e03479" data-background="slides/energy_027.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org3e03479">Environmental &amp; Other Factors</h2>
+<p class ="fragment" data-audio-src="audio/energy_s28.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgb469a13" data-background="slides/energy_028.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgb469a13">Natural Forces-Solar</h2>
+<p class ="fragment" data-audio-src="audio/energy_s29.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org9d18850" data-background="slides/energy_029.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org9d18850">Natural Forces-Geothermal</h2>
+<p class ="fragment" data-audio-src="audio/energy_s30.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org4c3fa4d" data-background="slides/energy_030.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org4c3fa4d">Natural Forces-Wind</h2>
+<p class ="fragment" data-audio-src="audio/energy_s31.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org8f1c40d" data-background="slides/energy_031.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org8f1c40d">Natural Forces</h2>
+<p class ="fragment" data-audio-src="audio/energy_s32.ogg">
+</section>
+</section>
+<section>
+<section id="slide-org061c0ec" data-background="slides/energy_032.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org061c0ec">Renewable use in Maine</h2>
+<p class ="fragment" data-audio-src="audio/energy_s33.ogg">
+</section>
+</section>
+<section>
+<section id="slide-orgc41c5f1" data-background="slides/energy_033.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgc41c5f1">Study Guide</h2>
+<p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
+
+</section>
+</section>
+<section>
+<section id="slide-org741852c">
+<h2 id="org741852c">Quiz</h2>
+<script data-quiz="energy_quiz" src="quiz/energy.js"> </script>
+</section>
+</section>
+</div>
+</div>
+<script src="../reveal/dist/reveal.js"></script>
+<script src="../reveal/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight],
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal/plugin/menu/menu.js' },
+{ src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+{ src: '../reveal/plugin/mathsvg/math.js', async: true },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>

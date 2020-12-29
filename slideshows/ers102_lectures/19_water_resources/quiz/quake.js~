@@ -1,0 +1,35 @@
+quake_quiz={
+	"info": {
+		"name":    "",
+		"main":    "Time for a quiz! Test your knowledge. Use 'ctrl +' or 'ctrl -' key combination to shrink/expand text to fit question on screen",
+	},
+	"questions": [
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "What is the nature of earthquakes in Maine?",
+			"a": [
+				{"option": " Weak earthquakes occur periodically in Maine and the threat from a 'big' earthquake is small", "incorrect": false},
+				{"option": " On average, large earthquakes occur in Maine about once every 20 years but cause little damage due to the geologic conditions in Maine", "incorrect": false},
+                {"option": " Earthquakes have not been measured in Maine for nearly a century and there is no threat from earthquakes in Maine", "incorrect": false},
+				{"option": " Earthquakes have not been measured in Maine for decades, indicating a catastrophic earthquake will occur in Maine soon", "incorrect": false},
+                {"option": " Earthquakes have never been recorded in Maine", "incorrect": false},
+			],
+			"correct": "Right!",
+			"incorrect": "Wrong :-("
+		},
+	]	
+	"questions": [
+		{ // Question 1 - Multiple Choice, Single True Answer
+			"q": "How were mountains in Maine created?",
+			"a": [
+				{"option": "Large boulders accumulating from the Canadian hinterland", "incorrect": false},
+				{"option": "By glaciers that deposited massive sediment mountains across Maine", "incorrect": false},
+				{"option": "Folding of rock layers during rifting of Maine from Antarctica", "incorrect": false},
+				{"option": "Subduction of the Iapetus Oceanic Plate and associated continental collision", "correct": true},
+				{"option": "Sediments deposited when Maine was covered by the Upimadethis Ocean", "incorrect": false},
+			],
+			"correct": "Right! Long ago, the oceanic crust beneath the Iapetus Ocean was being subducted beneath what is now eastern N. America ending with the collision of Eurasia with what is now N. America. During subduction and continental collision, mountains were formed",
+			"incorrect": "What?"
+		}
+	]	
+}
+

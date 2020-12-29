@@ -1,0 +1,141 @@
+#+OPTIONS: frag:t reveal_title_slide:nil toc:nil num:nil 
+#+REVEAL_ROOT: ../reveal
+#+REVEAL_HLEVEL: 1
+#+REVEAL_THEME: blood
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, slideNumber:'h/v'
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/menu/menu.js' },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },
+#+REVEAL_EXTERNAL_PLUGINS: { src: '../reveal/plugin/mathsvg/math.js', async: true },
+#+REVEAL_INIT_SCRIPT: audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, },
+#+REVEAL_INIT_SCRIPT: menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},
+#+REVEAL_EXTRA_CSS: ../style1.css
+* Drivers for Mass Wasting
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_000.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s01.ogg">
+* Slope Failure:Translation and Rotation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_001.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s02.ogg">
+* General Controls on Slope Failure
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_002.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s03.ogg">
+* Sharpe’s Classification Scheme
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_003.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s04.ogg">
+* Types of Movement
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_004.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s05.ogg">
+* Types of Movement
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_005.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s06.ogg">
+* Slow Slope Movement
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_006.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s07.ogg">
+* Landslide & Rockfalls
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_007.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s08.ogg">
+* Impacts
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_008.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s09.ogg">
+* Impacts
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_009.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s10.ogg">
+* Slope Failure Mitigation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_010.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s11.ogg">
+* Slope Failure Mitigation
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_011.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s12.ogg">
+* Mitigation near Los Angeles
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_012.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s13.ogg">
+* Vaiont Landslide, Italy, 1963
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_013.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s14.ogg">
+* Vaiont Landslide, Italy, 1963
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_014.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/slope_fail_s15.ogg">
+* Study Guide
+  :PROPERTIES:
+  :reveal_background_size: 1100px 
+  :reveal_background: slides/slope_fail_015.png
+  :reveal_background_trans: slide
+  :END:
+ 
+#+REVEAL_HTML: <p class ="fragment" data-audio-src="audio/SolveThePuzzle2.ogg">
