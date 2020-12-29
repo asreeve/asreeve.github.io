@@ -9,19 +9,19 @@
 
 
 
-<link rel="canonical" href="/parsing-latex-pdfs-with-pythons-mupdf-library.html">
+<link rel="canonical" href="/blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html">
 
         <meta name="author" content="asreeve" />
         <meta name="keywords" content="python,slideshow" />
-        <meta name="description" content="Introduction In the Fall of 2020, after making videos of lectures for a class I taught, I was required to switch my entire class to an all online format. All my previous slides were made using LaTeX&#39;s beamer package. I needed to either redo all this content or repurposed this …" />
+        <meta name="description" content="Why? In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format. All my previous slides were made using LaTeX&#39;s beamer package. I needed to either redo all this content or repurposed this material for online content. I had previously made mpg4 videos …" />
 
         <meta property="og:site_name" content="WaDa" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Parsing latex pdf&#39;s with python&#39;s mupdf library"/>
-        <meta property="og:url" content="/parsing-latex-pdfs-with-pythons-mupdf-library.html"/>
-        <meta property="og:description" content="Introduction In the Fall of 2020, after making videos of lectures for a class I taught, I was required to switch my entire class to an all online format. All my previous slides were made using LaTeX&#39;s beamer package. I needed to either redo all this content or repurposed this …"/>
+        <meta property="og:url" content="/blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html"/>
+        <meta property="og:description" content="Why? In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format. All my previous slides were made using LaTeX&#39;s beamer package. I needed to either redo all this content or repurposed this material for online content. I had previously made mpg4 videos …"/>
         <meta property="article:published_time" content="2020-12-13" />
-            <meta property="article:section" content="Converting PDF slides to PNGs" />
+            <meta property="article:section" content="python" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="slideshow" />
             <meta property="article:author" content="asreeve" />
@@ -92,7 +92,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/parsing-latex-pdfs-with-pythons-mupdf-library.html"
+                    <a href="/blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html"
                        rel="bookmark"
                        title="Permalink to Parsing latex pdf's with python's mupdf library">
                         Parsing latex pdf's with python's mupdf library
@@ -119,20 +119,22 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div class="section" id="introduction">
-<h2>Introduction</h2>
-<p>In the Fall of 2020, after making videos of lectures for a class I taught, I was required to switch my entire class to an all online format. All my previous slides were made using LaTeX's beamer package. I needed to either redo all this content or repurposed this material for online content. I was dissatisfied with the video creation process for several reasons:</p>
+                <div class="section" id="why">
+<h2>Why?</h2>
+<p>In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format.
+All my previous slides were made using LaTeX's beamer package. I needed to either redo all this content or repurposed this material for online content. I had previously made mpg4 videos for a portion fo this class. but was dissatisfied with the videos several reasons:</p>
 <ol class="arabic simple">
-<li>Videos are relatively large files and some students did not have great internet connections,</li>
+<li>Videos are relatively large files and some students did not have good internet connections,</li>
 <li>Videos were difficult to edit. I needed to listen to the entire video to find errors and edit them. This was very time-consuming,</li>
-<li>I saw no easy way to modification or updating a video.</li>
+<li>I saw no easy way to modify or update a video.</li>
 </ol>
-<p>I decided that slideshows with voice overs would provide a better format both for viewing and for maintenance. After some searching I settled on using reveal.js to create my slideshows. This provided a way to mix audio and graphics, had plugins that allowed quizzes to be created for the slideshows, allowed inclusion of math, and allowed the inclusion of gifs and videos. Packages in Emacs (a text editor) provided a way of creating slideshows without the need to write HTML, simplifying the process.</p>
-<p>Instead of rewriting the LaTeX files used to make the PDF files, I decided to convert the PDF pages into PNG graphic files. Automating this process is the theme for the rest of this post.</p>
+<p>I decided that slideshows with voice overs would provide a better format both for viewing and for maintenance. After some searching I settled on using reveal.js to create my slideshows. This provided a way to mix audio and graphics, had plugins that allowed quizzes to be created for the slideshows, allowed inclusion of math, and allowed the inclusion of gifs and videos. Packages in Emacs (a text editor) provided a way of creating slideshows without the need to write HTML, simplifying the process. Because HTML is a plain text format, writing scripts to modify the files would be fairly easy.</p>
+<p>Instead of rewriting the LaTeX files used to make the PDF files, I decided to convert the PDF pages into PNG graphic files. This allowed me to quickly reuse slides I'd made. Automating this process is the theme for the rest of this post.</p>
 </div>
 <div class="section" id="automating-slide-conversion">
 <h2>Automating slide conversion</h2>
-<p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) file. The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png). This code below is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
+<p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) graphic file.</p>
+<p>The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file is given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png). This code below is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -241,7 +243,7 @@
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
   <ul class="list-group" id="categories">
     <li class="list-group-item">
-      <a href="/category/converting-pdf-slides-to-pngs.html"><i class="fa fa-folder-open fa-lg"></i>Converting PDF slides to PNGs</a>
+      <a href="/category/python.html"><i class="fa fa-folder-open fa-lg"></i>python</a>
     </li>
   </ul>
 </li>
