@@ -1,1 +1,1 @@
-/home/asreeve/current/misc/git/reveal.js/
+../../reveal.js
