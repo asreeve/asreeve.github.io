@@ -1,0 +1,12 @@
+* Section 
+
+* What is Python? What can I do with it?
+
+* Interactive Use-Python Shell
+
+* Interactive Use-Ipython Shell
+
+* Writing Scripts/Programs
+
+* Jupyter Notebooks
+

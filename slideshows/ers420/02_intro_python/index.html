@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="../reveal.js/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="../style1.css"/>
+<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-org3ed56fe" data-background="slides/intro_python_000.png" data-background-size="1100px" data-background-transition="slide">
+  <h2 id="org3ed56fe">Section</h2>
+<p class ="fragment" data-audio-src="audio/intro_python_01.ogg">
+
+
+</section>
+</section>
+<section>
+<section id="slide-org537b89c" data-background="slides/intro_python_001.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org537b89c">What is Python? What can I do with it?</h2>
+<audio data-autoplay>  <source src="audio/intro_python_02.ogg" type="audio/ogg"> </audio>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfa630b7" data-background="slides/intro_python_002.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgfa630b7">Interactive Use-Python Shell</h2>
+<video data-autoplay src="video/intro_python_03.mp4"></video>
+</section>
+</section>
+<section>
+<section id="slide-org386307c" data-background="slides/intro_python_003.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org386307c">Interactive Use-Ipython Shell</h2>
+<video data-autoplay src="video/intro_python_04.mp4"></video>
+</section>
+</section>
+<section>
+<section id="slide-orgeef6dfb" data-background="slides/intro_python_004.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="orgeef6dfb">Writing Scripts/Programs</h2>
+<video data-autoplay src="video/intro_python_05.mp4"></video>
+</section>
+</section>
+<section>
+<section id="slide-org1c8f4b0" data-background="slides/intro_python_005.png" data-background-size="1100px" data-background-transition="slide">
+<h2 id="org1c8f4b0">Jupyter Notebooks</h2>
+<video data-autoplay src="video/intro_python_06.mp4"></video>
+</section>
+</section>
+</div>
+</div>
+
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js/plugin/audio-slideshow/plugin.js"></script>
+<script src="../reveal.js/plugin/menu/menu.js"></script>
+
+<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+plugins: [ RevealAudioSlideshow, RevealMenu, RevealHighlight],
+
+width:1200, height:800, slideNumber:'h/v',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: '../reveal.js/plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+{ src: '../reveal.js/plugin/menu/menu.js' },
+{ src: '../reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, force_checkbox:true }); } },]
+,audio:{autoplay: true, prefix: 'audio/', suffix: '.ogg', textToSpeechURL: null, defaultNotes: false, defaultText: false, advance: 0, defaultDuration: 5, defaultAudios: false, playerOpacity: 0.5, playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', startAtFragment: false, }, menu:{themes: false, transitions: false, markers: true, hideMissingTitles: false,},});
+</script>
+</body>
+</html>
