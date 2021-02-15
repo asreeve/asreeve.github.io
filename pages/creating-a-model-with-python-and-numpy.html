@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Creating a model with python and numpy - WaDa</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../pages/creating-a-model-with-python-and-numpy.html">
+
+        <meta name="author" content="asreeve" />
+        <meta name="description" content="write a python script to solve the model I step through in the notes in a general way so conditions could be changed determine how to add recharge to the equations. The basic constraints for the first groundwater flow model: * 4 rows, 3 columns, 1 layer * steady state * no flow …" />
+
+    <meta property="og:site_name" content="WaDa" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Creating a model with python and numpy"/>
+    <meta property="og:url" content="../pages/creating-a-model-with-python-and-numpy.html"/>
+    <meta property="og:description" content="write a python script to solve the model I step through in the notes in a general way so conditions could be changed determine how to add recharge to the equations. The basic constraints for the first groundwater flow model: * 4 rows, 3 columns, 1 layer * steady state * no flow …" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../theme/css/html4css1.css" rel="stylesheet">
+        <link href="../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="../images/logo2.svg" width="140"/>             </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../pages/about-me.html">
+                             About&nbsp;Me
+                          </a></li>
+                         <li><a href="../pages/classes.html">
+                             Classes
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <section id="content" class="body">
+        <h1 class="entry-title">Creating a model with python and&nbsp;numpy</h1>
+        
+        <div class="entry-content">
+            <ol class="arabic simple">
+<li>write a python script to solve the model I step through in the notes
+in a general way so conditions could be&nbsp;changed</li>
+<li>determine how to add recharge to the&nbsp;equations.</li>
+</ol>
+<p>The basic constraints for the first groundwater flow model: * 4 rows, 3
+columns, 1 layer * steady state * no flow around perimiter of model *
+contant head = 100 m on <span class="caps">NE</span> corner cell (only one cell) * each cell is
+1000 m by 1000 m * impermeable lower boundary at 95 m * aquifer composed
+of fine sand * assume saturated thickness&nbsp;constant</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># load necessary packages</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># define basic model paramters, keep everything in units of meters and seconds</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">delx</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="linenos">4</span><span class="n">dely</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="linenos">5</span><span class="n">nx</span><span class="o">=</span><span class="mi">3</span>
+<span class="linenos">6</span><span class="n">ny</span><span class="o">=</span><span class="mi">4</span>
+<span class="linenos">7</span><span class="n">K</span><span class="o">=</span><span class="mf">1.e-4</span>
+<span class="linenos">8</span><span class="n">S</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="linenos">9</span><span class="n">bot</span><span class="o">=</span><span class="mi">95</span>
+</pre></div>
+<p>Create arrays to identify constant head cells and cells containing
+source&nbsp;sinks.</p>
+<p>Const<sub>hd</sub>array is set to value of constant head or to a value (-9.9
+below) indicating it is not a constant head&nbsp;cell.</p>
+<p>ssinks array set to flux rate, with zero indicating no&nbsp;flux.</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># create grid to define characteristics</span>
+<span class="linenos">2</span><span class="n">not_const</span><span class="o">=-</span><span class="mf">9.9</span>
+<span class="linenos">3</span><span class="n">ssinks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="linenos">4</span><span class="n">const_hd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">not_const</span>
+<span class="linenos">5</span><span class="n">start_hd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="n">ncells</span><span class="o">=</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span>
+</pre></div>
+<p>Create array A and vector b to calculate heads h. Values set initially
+to zero to be changed later. These will be modified to create an
+equaltion of the&nbsp;form:</p>
+<div class="math">
+\begin{equation*}
+\begin{bmatrix}
+b_1\\
+b_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+A_{1,1} &amp; A_{1,2} \\
+A_{2,1} &amp; A_{2,2} \\
+\end{bmatrix}
+\begin{bmatrix}
+h_1\\
+h_2
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># create array for doing calcs</span>
+<span class="linenos">2</span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ncells</span><span class="p">,</span><span class="n">ncells</span><span class="p">])</span>
+<span class="linenos">3</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ncells</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+<p>Set pumping rate to 0.2 <span class="math">\(\frac{m^2}{sec}\)</span> (3170&nbsp;gpm).</p>
+<p>Set recharge to <span class="math">\(3\cdot 10^{-9} \frac{m}{sec}\)</span>, need to multiply by
+surface area of cell and divide by cell area for 2-D&nbsp;model</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># set const_hd</span>
+<span class="linenos">2</span><span class="n">const_hd</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">100.</span>
+<span class="linenos">3</span><span class="c1"># set pumping well</span>
+<span class="linenos">4</span><span class="n">ssinks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c1"># add recharge</span>
+<span class="linenos">7</span><span class="n">ssinks</span> <span class="o">=</span> <span class="n">ssinks</span> <span class="o">-</span> <span class="p">(</span><span class="mf">3e-9</span><span class="o">*</span><span class="mi">1000</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">1000</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>Loop over all the cells and set values in matrix A and vector&nbsp;b.</p>
+<p>Entrys are based on fluxes across each cell face labeled n,s,e,w (north,
+south, east, west). If a cell face is at edge of mode, treat as no flow
+and zero these entrys. Because this is a model with constant K, steady
+state, and <span class="math">\(\Delta x = \Delta y\)</span>, the creation of A and b are greatly&nbsp;simplified.</p>
+<p>Here the 4 by 3 model grid is converted from a y, x (or row, column)
+coordinates to a cell number. Concersion from one to the other
+coordinate system is done based&nbsp;on:</p>
+<p><span class="math">\(cell\_num = col + row \cdot&nbsp;num\_cols\)</span></p>
+<div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+<span class="linenos"> 3</span>            <span class="n">cell</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">nx</span>
+<span class="linenos"> 4</span>            <span class="n">cell_n</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="n">nx</span>
+<span class="linenos"> 5</span>            <span class="n">cell_s</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">-</span> <span class="n">nx</span>
+<span class="linenos"> 6</span>            <span class="n">cell_e</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos"> 7</span>            <span class="n">cell_w</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="linenos"> 8</span>            <span class="c1"># is cell constant head?</span>
+<span class="linenos"> 9</span>            <span class="k">if</span> <span class="n">const_hd</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">not_const</span><span class="p">:</span>
+<span class="linenos">10</span>                    <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="linenos">11</span>                    <span class="n">b</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">const_hd</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+<span class="linenos">12</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">13</span>                    <span class="c1"># account for cell fluxes across faces</span>
+<span class="linenos">14</span>                    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">ny</span><span class="p">:</span>
+<span class="linenos">15</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+<span class="linenos">16</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_n</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+<span class="linenos">17</span>                    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">ny</span><span class="p">:</span>
+<span class="linenos">18</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+<span class="linenos">19</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_s</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+<span class="linenos">20</span>                    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nx</span><span class="p">:</span>
+<span class="linenos">21</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+<span class="linenos">22</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_e</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+<span class="linenos">23</span>                    <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nx</span><span class="p">:</span>
+<span class="linenos">24</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+<span class="linenos">25</span>                            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_w</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+<span class="linenos">26</span>                    <span class="c1"># add sources/sinks</span>
+<span class="linenos">27</span>                    <span class="k">if</span> <span class="n">ssinks</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">28</span>                            <span class="n">b</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">ssinks</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+</pre></div>
+<p>Solve the constructed equations using numpy&#8217;s linalg&nbsp;package</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">h</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+<p>Reshape hyd. head vector to match original model&nbsp;grid</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># show hydr. head results</span>
+<span class="linenos">2</span><span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+<pre class="literal-block">
+[[ 99.7942029   99.78766046  99.80372671]
+ [ 99.80074535  99.76505177  99.81979297]
+ [ 99.84298137  99.85200829  99.89060042]
+ [ 99.87619048  99.90939959 100.        ]]
+</pre>
+<script type='text/javascript'>if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+        </div>
+    </section>
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="../blog/2021/02/02/posted-class-slideshows.html">Posted class&nbsp;slideshows</a></li>
+    <li class="list-group-item"><a href="../blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html">Parsing latex pdf&#8217;s with python&#8217;s mupdf&nbsp;library</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-4">
+      <a href="../tag/slideshow.html">slideshow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../tag/python.html">python</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container-fluid">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2021 asreeve
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+    <script src="../theme/js/bodypadding.js"></script>
+
+
+</body>
+</html>

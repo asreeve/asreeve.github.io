@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Groundwater Modeling - WaDa</title>
+    <title>Groundwater Modeling - WaDa</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,26 +9,27 @@
 
 
 
-<link rel="canonical" href="/pages/groundwater-modeling.html">
+<link rel="canonical" href="../pages/groundwater-modeling.html">
 
         <meta name="author" content="asreeve" />
         <meta name="description" content="Note and other content for my groundwater modeling class are provided below. This material will start with an overview of the math that underlies a computer code like MODFLOW, and will then shift to material covering how to write python scripts to create MODFLOW 6 models ising the excellent Flopy …" />
 
     <meta property="og:site_name" content="WaDa" />
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Groundwater Modeling"/>
-    <meta property="og:url" content="/pages/groundwater-modeling.html"/>
+    <meta property="og:title" content="Groundwater Modeling"/>
+    <meta property="og:url" content="../pages/groundwater-modeling.html"/>
     <meta property="og:description" content="Note and other content for my groundwater modeling class are provided below. This material will start with an overview of the math that underlies a computer code like MODFLOW, and will then shift to material covering how to write python scripts to create MODFLOW 6 models ising the excellent Flopy …" />
 
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.darkly.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-        <link href="/theme/css/html4css1.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <link href="../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../theme/css/html4css1.css" rel="stylesheet">
+        <link href="../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
 
 
 
@@ -44,15 +45,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="/images/logo2.svg" width="250"/>             </a>
+            <a href="../" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="../images/logo2.svg" width="140"/>             </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="/pages/about-me.html">
-                             About Me
+                         <li><a href="../pages/about-me.html">
+                             About&nbsp;Me
                           </a></li>
-                         <li><a href="/pages/classes.html">
+                         <li><a href="../pages/classes.html">
                              Classes
                           </a></li>
             </ul>
@@ -64,35 +65,24 @@
 </div> <!-- /.navbar -->
 
 <!-- Banner -->
-<style>
-	#banner{
-	    background-image:url("/images/logo4.png");
-	}
-</style>
-
-<div id="banner">
-	<div class="container-fluid">
-		<div class="copy">
-			<h1>WaDa</h1>
-		</div>
-	</div>
-</div><!-- End Banner -->
+<!-- End Banner -->
 
 <!-- Content Container -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-9 col-sm-push-3">
     <section id="content" class="body">
-        <h1 class="entry-title">Groundwater Modeling</h1>
+        <h1 class="entry-title">Groundwater&nbsp;Modeling</h1>
         
         <div class="entry-content">
-            <p>Note and other content for my groundwater modeling class are provided below. This material will start with an overview of the math that underlies a computer code like MODFLOW, and will then shift to material covering how to write python scripts to create MODFLOW 6 models ising the excellent Flopy Python package made by the USGS.</p>
-<p><a class="reference external" href="/images/gw_modeling/gwmodel_math_ho.pdf">Some of the math underlying a groundwater model</a></p>
+            <p>Note and other content for my groundwater modeling class are provided below. This material will start with an overview of the math that underlies a computer code like <span class="caps">MODFLOW</span>, and will then shift to material covering how to write python scripts to create <span class="caps">MODFLOW</span> 6 models ising the excellent Flopy Python package made by the <span class="caps">USGS</span>.</p>
+<p><a class="reference external" href="../images/gw_modeling/gwmodel_math_ho.pdf">Some of the math underlying a groundwater&nbsp;model</a></p>
+<p>Setting up 4 by 3 <a class="reference external" href="../pages/creating-a-model-with-python-and-numpy.html">simple groundwater flow&nbsp;model</a></p>
 
         </div>
     </section>
         </div>
-        <div class="col-sm-3" id="sidebar">
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
             <aside>
 <!-- Sidebar -->
 <section class="well well-sm">
@@ -103,23 +93,34 @@
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
   <ul class="list-group" id="social">
     <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Social -->
 
-<!-- Sidebar/Categories -->
+<!-- Sidebar/Recent Posts -->
 <li class="list-group-item">
-  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
-  <ul class="list-group" id="categories">
-    <li class="list-group-item">
-      <a href="/category/classes.html"><i class="fa fa-folder-open fa-lg"></i>classes</a>
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="../blog/2021/02/02/posted-class-slideshows.html">Posted class&nbsp;slideshows</a></li>
+    <li class="list-group-item"><a href="../blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html">Parsing latex pdf&#8217;s with python&#8217;s mupdf&nbsp;library</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-4">
+      <a href="../tag/slideshow.html">slideshow</a>
     </li>
-    <li class="list-group-item">
-      <a href="/category/python.html"><i class="fa fa-folder-open fa-lg"></i>python</a>
+    <li class="list-group-item tag-4">
+      <a href="../tag/python.html">python</a>
     </li>
   </ul>
 </li>
-<!-- End Sidebar/Categories -->
+<!-- End Sidebar/Tag Cloud -->
   </ul>
 </section>
 <!-- End Sidebar -->            </aside>
@@ -140,16 +141,16 @@
       </div>
    </div>
 </footer>
-<script src="/theme/js/jquery.min.js"></script>
+<script src="../theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script src="../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
+<script src="../theme/js/respond.min.js"></script>
 
 
-    <script src="/theme/js/bodypadding.js"></script>
+    <script src="../theme/js/bodypadding.js"></script>
 
 
 </body>

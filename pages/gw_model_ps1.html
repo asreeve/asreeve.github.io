@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>gw_model_ps1 - WaDa</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../pages/gw_model_ps1.html">
+
+        <meta name="author" content="asreeve" />
+        <meta name="description" content="write a python script to solve the model I step through in the notes in a general way so conditions could be changed determine how to add recharge to the equations. The basic constraints for the first groundwater flow model: * 4 rows, 3 columns, 1 layer * steady state * no flow …" />
+
+    <meta property="og:site_name" content="WaDa" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="gw_model_ps1"/>
+    <meta property="og:url" content="../pages/gw_model_ps1.html"/>
+    <meta property="og:description" content="write a python script to solve the model I step through in the notes in a general way so conditions could be changed determine how to add recharge to the equations. The basic constraints for the first groundwater flow model: * 4 rows, 3 columns, 1 layer * steady state * no flow …" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+        <link href="../theme/css/html4css1.css" rel="stylesheet">
+        <link href="../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="../images/logo2.svg" width="250"/>             </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../pages/about-me.html">
+                             About&nbsp;Me
+                          </a></li>
+                         <li><a href="../pages/classes.html">
+                             Classes
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+	#banner{
+	    background-image:url("../images/logo4.png");
+	}
+</style>
+
+<div id="banner">
+	<div class="container-fluid">
+		<div class="copy">
+			<h1>WaDa</h1>
+		</div>
+	</div>
+</div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content" class="body">
+        <h1 class="entry-title">gw_model_ps1</h1>
+        
+        <div class="entry-content">
+            <ol class="arabic simple">
+<li>write a python script to solve the model I step through in the notes
+in a general way so conditions could be&nbsp;changed</li>
+<li>determine how to add recharge to the&nbsp;equations.</li>
+</ol>
+<p>The basic constraints for the first groundwater flow model: * 4 rows, 3
+columns, 1 layer * steady state * no flow around perimiter of model *
+contant head = 100 m on <span class="caps">NE</span> corner cell (only one cell) * each cell is
+1000 m by 1000 m * impermeable lower boundary at 95 m * aquifer
+composed of fine sand * assume saturated thickness&nbsp;constant</p>
+<pre class="code python literal-block">
+<span class="c1"># load necessary packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre>
+<pre class="code python literal-block">
+<span class="c1"># define basic model paramters, keep everything in units of meters and seconds</span>
+
+<span class="n">delx</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dely</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">nx</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">ny</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">K</span><span class="o">=</span><span class="mf">1.e-4</span>
+<span class="n">S</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">bot</span><span class="o">=</span><span class="mi">95</span>
+</pre>
+<p>Create arrays to identify constant head cells and cells containing
+source&nbsp;sinks.</p>
+<p>Const_hd array is set to value of constant head or to a value (-9.9
+below) indicating it is not a constant head&nbsp;cell.</p>
+<p>ssinks array set to flux rate, with zero indicating no&nbsp;flux.</p>
+<pre class="code python literal-block">
+<span class="c1"># create grid to define characteristics</span>
+<span class="n">not_const</span><span class="o">=-</span><span class="mf">9.9</span>
+<span class="n">ssinks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">const_hd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">not_const</span>
+<span class="n">start_hd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="n">ncells</span><span class="o">=</span><span class="n">nx</span><span class="o">*</span><span class="n">ny</span>
+</pre>
+<p>Create array A and vector b to calculate heads h. Values set initially
+to zero to be changed later. These will be modified to create an
+equaltion of the&nbsp;form:</p>
+<p>$</p>
+<p>=</p>
+<p>$</p>
+<pre class="code python literal-block">
+<span class="c1"># create array for doing calcs</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ncells</span><span class="p">,</span><span class="n">ncells</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ncells</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre>
+<p>Set pumping rate to 0.2 <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>m</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>sec</i></span><span class="ignored">)</span></span></span> (3170&nbsp;gpm).</p>
+<p>Set recharge to <span class="formula">3⋅10<sup> − 9</sup><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>m</i></span><span class="ignored">)/(</span><span class="denominator"><i>sec</i></span><span class="ignored">)</span></span></span>, need to multiply
+by surface area of cell and divide by cell area for 2-D&nbsp;model</p>
+<pre class="code python literal-block">
+<span class="c1"># set const_hd</span>
+<span class="n">const_hd</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">100.</span>
+<span class="c1"># set pumping well</span>
+<span class="n">ssinks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+
+<span class="c1"># add recharge</span>
+<span class="n">ssinks</span> <span class="o">=</span> <span class="n">ssinks</span> <span class="o">-</span> <span class="p">(</span><span class="mf">3e-9</span><span class="o">*</span><span class="mi">1000</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">1000</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre>
+<p>Loop over all the cells and set values in matrix A and vector&nbsp;b.</p>
+<p>Entrys are based on fluxes across each cell face labeled n,s,e,w (north,
+south, east, west). If a cell face is at edge of mode, treat as no flow
+and zero these entrys. Because this is a model with constant K, steady
+state, and <span class="formula">Δ<i>x</i> = Δ<i>y</i></span>, the creation of A and b are
+greatly&nbsp;simplified.</p>
+<p>Here the 4 by 3 model grid is converted from a y, x (or row, column)
+coordinates to a cell number. Concersion from one to the other
+coordinate system is done based&nbsp;on:</p>
+<p><span class="formula"><i>cell</i>_<i>num</i> = <i>col</i> + <i>row</i>⋅<i>num</i>_<i>cols</i></span></p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+        <span class="n">cell</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">nx</span>
+        <span class="n">cell_n</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="n">nx</span>
+        <span class="n">cell_s</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">-</span> <span class="n">nx</span>
+        <span class="n">cell_e</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">cell_w</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="c1"># is cell constant head?</span>
+        <span class="k">if</span> <span class="n">const_hd</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">not_const</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
+            <span class="n">b</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">const_hd</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># account for cell fluxes across faces</span>
+            <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">ny</span><span class="p">:</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_n</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">ny</span><span class="p">:</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_s</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nx</span><span class="p">:</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_e</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">nx</span><span class="p">:</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="n">cell_w</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="c1"># add sources/sinks</span>
+            <span class="k">if</span> <span class="n">ssinks</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">b</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">ssinks</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+</pre>
+<p>Solve the constructed equations using numpy’s linalg&nbsp;package</p>
+<pre class="code python literal-block">
+<span class="n">h</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre>
+<p>Reshape hyd. head vector to match original model&nbsp;grid</p>
+<pre class="code python literal-block">
+<span class="c1"># show hydr. head results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre>
+<pre class="literal-block">
+[[ 99.7942029   99.78766046  99.80372671]
+ [ 99.80074535  99.76505177  99.81979297]
+ [ 99.84298137  99.85200829  99.89060042]
+ [ 99.87619048  99.90939959 100.        ]]
+</pre>
+
+        </div>
+    </section>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="../category/classes.html"><i class="fa fa-folder-open fa-lg"></i>classes</a>
+    </li>
+    <li class="list-group-item">
+      <a href="../category/python.html"><i class="fa fa-folder-open fa-lg"></i>python</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container-fluid">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2021 asreeve
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+    <script src="../theme/js/bodypadding.js"></script>
+
+
+</body>
+</html>
