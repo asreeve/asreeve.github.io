@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Getting started with Flopy - WaDa</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../blog/2021/02/27/getting-started-with-flopy.html">
+
+        <meta name="author" content="asreeve" />
+        <meta name="keywords" content="python,flopy,modflow groundwater" />
+        <meta name="description" content="MODFLOW 6 and Flopy MODFLOW Software developed by the USGS, first USGS documentation in 1983 Written in FORTRAN, has evolved adding new processes using new FORTRAN features Current version (in 2021) is MODFLOW-6, a significant change from previous versions Command line program Reads text files defining model, Calculates hydraulic …" />
+
+        <meta property="og:site_name" content="WaDa" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Getting started with Flopy"/>
+        <meta property="og:url" content="../../../../blog/2021/02/27/getting-started-with-flopy.html"/>
+        <meta property="og:description" content="MODFLOW 6 and Flopy MODFLOW Software developed by the USGS, first USGS documentation in 1983 Written in FORTRAN, has evolved adding new processes using new FORTRAN features Current version (in 2021) is MODFLOW-6, a significant change from previous versions Command line program Reads text files defining model, Calculates hydraulic …"/>
+        <meta property="article:published_time" content="2021-02-27" />
+            <meta property="article:section" content="modeling" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="flopy" />
+            <meta property="article:tag" content="modflow groundwater" />
+            <meta property="article:author" content="asreeve" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../theme/css/pygments/fruity.css" rel="stylesheet">
+        <link href="../../../../theme/css/html4css1.css" rel="stylesheet">
+        <link href="../../../../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../theme/css/style.css" type="text/css"/>
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../../" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="../../../../images/logo2.svg" width="140"/>             </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../../../../pages/about-me.html">
+                             About&nbsp;Me
+                          </a></li>
+                         <li><a href="../../../../pages/classes.html">
+                             Classes
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-3">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../blog/2021/02/27/getting-started-with-flopy.html"
+                       rel="bookmark"
+                       title="Permalink to Getting started with Flopy">
+                        Getting started with&nbsp;Flopy
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-02-27T00:00:00-05:00"> Sat 27 February 2021</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../tag/python.html">python</a>
+        /
+	<a href="../../../../tag/flopy.html">flopy</a>
+        /
+	<a href="../../../../tag/modflow-groundwater.html">modflow groundwater</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="section" id="modflow-6-and-flopy">
+<h2><span class="caps">MODFLOW</span> 6 and&nbsp;Flopy</h2>
+<ul class="simple">
+<li><span class="caps">MODFLOW</span><ul>
+<li>Software developed by the <span class="caps">USGS</span>, first <span class="caps">USGS</span> documentation in&nbsp;1983</li>
+<li>Written in <span class="caps">FORTRAN</span>, has evolved adding new processes using new <span class="caps">FORTRAN</span>&nbsp;features</li>
+<li>Current version (in 2021) is <span class="caps">MODFLOW</span>-6, a significant change from previous&nbsp;versions</li>
+<li>Command line program<ul>
+<li>Reads text files defining model, Calculates hydraulic head <span class="amp">&amp;</span> water&nbsp;fluxes</li>
+<li>Modular structure defining different&nbsp;features</li>
+<li>Multiple commercial interfaces, <span class="caps">USGS</span> developed ModelMuse and&nbsp;Flopy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Flopy<ul>
+<li>Python package, leverages python capabilities for <span class="caps">MODFLOW</span>&nbsp;input/output</li>
+<li>Allows use of plotting package, data&nbsp;manipulation</li>
+<li>can use to run multiple models (via python&nbsp;packages)</li>
+</ul>
+</li>
+</ul>
+<p>Available at url{<a class="reference external" href="https://www.usgs.gov/mission-areas/water-resources/science/modflow-and-related-programs">https://www.usgs.gov/mission-areas/water-resources/science/modflow-and-related-programs</a>}</p>
+</div>
+<div class="section" id="a-first-flopy-model">
+<h2>A First Flopy&nbsp;Model</h2>
+<p>To provide a Flopy overview, the simplest groundwater flow model I can conceive of, a Darcy tube, will be&nbsp;created.</p>
+<object data="&lt;{static}../../images/gw_modeling/darcy_tube_sim.svg" style="width: 80%;" type="image/svg+xml">
+</object>
+<ul class="simple">
+<li>one-dimension</li>
+<li>homogeneous materials with a K = <span class="math">\(1 \cdot 10^{-5}&nbsp;\frac{m}{sec}\)</span></li>
+<li>steady&nbsp;state</li>
+<li>constant head boundaries on&nbsp;ends</li>
+</ul>
+<p>In the text below, I present a brief descriptions of the packages used followed by the Python code needed to implement&nbsp;them.</p>
+</div>
+<div class="section" id="flopy-packages">
+<h2>Flopy&nbsp;packages</h2>
+<p>The packages imported from Flopy to create this model&nbsp;include:</p>
+<ul class="simple">
+<li><tt class="docutils literal">import flopy.mf6.modflow</tt> : to access flopy <span class="caps">MODFLOW</span>-6 packages, will set this to <tt class="docutils literal">mf</tt></li>
+<li><tt class="docutils literal">mf.MFSimulation</tt> : creates simulations instance<ul>
+<li><tt class="docutils literal">mf. mf.ModflowTdis</tt> : handles simulation&nbsp;time</li>
+<li><tt class="docutils literal">mf.ModflowIms</tt> : solves matrix&nbsp;equations</li>
+<li><tt class="docutils literal">mf.ModflowGwf</tt> : creates instance of groundwater processes<ul>
+<li><tt class="docutils literal">mf.ModflowGwfdis</tt> : spatial parameters and grid (are other&nbsp;options)</li>
+<li><tt class="docutils literal">mf.ModflowGwfic</tt> : set initial conditions in model (e.g. hydr.&nbsp;head)</li>
+<li><tt class="docutils literal">mf.ModflowGwfnpf</tt> : set cell hydraulic&nbsp;properties</li>
+<li><tt class="docutils literal">mf.ModflowGwfchd</tt> : <span class="caps">I.D.</span> const. head&nbsp;cells</li>
+<li><tt class="docutils literal">mf.mfgwfoc.ModflowGwfoc</tt> : control what is output and its&nbsp;formatting</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="import-modules-create-base-model-object">
+<h2>Import Modules, Create Base Model&nbsp;Object</h2>
+<p>The python text used to begin this modeling example&nbsp;follow:</p>
+<ul class="simple">
+<li>Import appropriate modules to use flopy with <span class="caps">MODFLOW6</span> and  post process&nbsp;output:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">flopy.mf6.modflow</span> <span class="k">as</span> <span class="nn">mf</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">flopy.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="linenos">3</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+<ul class="simple">
+<li>Instantiate the base model, a python object, to be defined with other&nbsp;methods:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">work_dir</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
+<span class="linenos">2</span><span class="n">mod_name</span> <span class="o">=</span> <span class="s2">&quot;DarcyTube&quot;</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">model</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">MFSimulation</span><span class="p">(</span>
+<span class="linenos">5</span>    <span class="n">sim_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>  <span class="c1"># stem of file names that will be created</span>
+<span class="linenos">6</span>    <span class="n">sim_ws</span><span class="o">=</span><span class="n">work_dir</span><span class="p">,</span>  <span class="c1"># directory were modflow input and output files stored</span>
+<span class="linenos">7</span>    <span class="n">verbosity_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">8</span>    <span class="n">exe_name</span><span class="o">=</span><span class="s2">&quot;mf6&quot;</span><span class="p">,</span> <span class="c1"># name of modflow executable, may need to include path</span>
+<span class="linenos">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="model-time-solver-and-basic-groundwater-processes">
+<h2>Model Time, Solver, and Basic Groundwater&nbsp;Processes</h2>
+<p>The number of stress periods and time steps in <span class="caps">MODFLOW</span> are set with the &#8216;Tdis&#8217; package; the equations that characterize the groundwater flow problem are solved with the &#8216;Ims&#8217; package, and the &#8216;Gwf&#8217; object that defines the different flow processes  (incudes grid, hydraulic parameters, and source/sink in&nbsp;model).</p>
+<ul class="simple">
+<li>MFmodflowTdis : Time Discretization, stress periods and time&nbsp;steps</li>
+<li>ModflowIms : Iterative Model Solver, define matrix&nbsp;solver</li>
+<li>ModflowGwf : Groundwater flow, object to store flow&nbsp;processes</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">time_dis</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowTdis</span><span class="p">(</span>
+<span class="linenos"> 2</span>    <span class="n">model</span><span class="p">,</span> <span class="n">pname</span><span class="o">=</span><span class="s2">&quot;TimeDiscret&quot;</span><span class="p">,</span>
+<span class="linenos"> 3</span>    <span class="n">time_units</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">,</span> <span class="n">nper</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 4</span>    <span class="n">perioddata</span><span class="o">=</span><span class="p">[(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span> <span class="c1"># period length, num steps, mutliplier</span>
+<span class="linenos"> 5</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="c1"># steady state model in one stress period, these times will not be used</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">solver</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowIms</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pname</span><span class="o">=</span><span class="s2">&quot;solver&quot;</span><span class="p">,</span> <span class="n">complexity</span><span class="o">=</span><span class="s2">&quot;SIMPLE&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">gwtr_flow</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowGwf</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">modelname</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span> <span class="n">model_nam_file</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">.nam&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="spatial-grid-initial-conditions-node-parameters">
+<h2>Spatial Grid, Initial Conditions, Node&nbsp;Parameters</h2>
+<p>Several options are available in <span class="caps">MODFLOW6</span> to define the finite volume grid. In this model the traditional, and simplest, grid structure (a rectilinear grid) is defined with the &#8216;dis&#8217; package.
+Initial conditions or starting hydraulic head values are defined with the &#8216;ic&#8217; <span class="caps">MODFLOW</span> package. Hydraulic conductance (K), dewatering attributes, and cell types (unconfined, confined, perched etc.) are defined in the &#8216;nps&#8217; package. Below, &#8216; icelltype=1&#8217; indicates the saturated thickness is calculated from the heads when cell water level is below the top of a&nbsp;cell.</p>
+<ul class="simple">
+<li>ModflowGwfdis : Discretise grid, grid size and cell sizes for rectilinear (tradiational) grid, other grids are available in <span class="caps">MODFLOW</span>&nbsp;6</li>
+<li>ModflowGwfic : Initial Conditions, set the initial hydr.&nbsp;heads</li>
+<li>ModflowGwfnpf : Node-Property Flow, set cell properties (hydr params, rewetting,&nbsp;dewatering)</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">grid_dis</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowGwfdis</span><span class="p">(</span>
+<span class="linenos">2</span>    <span class="n">gwtr_flow</span><span class="p">,</span> <span class="n">nlay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">delr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">delc</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">botm</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="linenos">3</span><span class="p">)</span>
+<span class="linenos">4</span><span class="c1"># 3-D numpy grid used to define 1-D initial hydr. heads</span>
+<span class="linenos">5</span><span class="n">init_cond</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowGwfic</span><span class="p">(</span>
+<span class="linenos">6</span>    <span class="n">gwtr_flow</span><span class="p">,</span> <span class="n">pname</span><span class="o">=</span><span class="s2">&quot;init_cond&quot;</span><span class="p">,</span> <span class="n">strt</span><span class="o">=</span><span class="mf">10.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="linenos">7</span><span class="p">)</span>
+<span class="linenos">8</span><span class="c1"># icelltype=1, &#39;non convertable&#39; cell, am assuming won&#39;t de-water</span>
+<span class="linenos">9</span><span class="n">node_prop</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowGwfnpf</span><span class="p">(</span><span class="n">gwtr_flow</span><span class="p">,</span> <span class="n">icelltype</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">1.0e-5</span><span class="p">,</span> <span class="n">save_flows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="set-boundary-conditions">
+<h2>Set Boundary&nbsp;Conditions</h2>
+<p>In this model, only constant hydraulic head boundaries are set. Below, a loop is used to do this. For this simple model, it would have been easier to explicitly write out this list of&nbsp;parameters.</p>
+<ul class="simple">
+<li>Only use constant head boundaries, assigned in first and last columns in&nbsp;row</li>
+<li>No-flow assumed along edges (default behavior of <span class="caps">MODFLOW</span>).</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">const_hd_lst</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># somewhat convoluted way of setting two const head cells</span>
+<span class="linenos"> 2</span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_dis</span><span class="o">.</span><span class="n">ncol</span><span class="o">.</span><span class="n">get_data</span><span class="p">()):</span>  <span class="c1"># loop over ncol</span>
+<span class="linenos"> 3</span>    <span class="k">if</span> <span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">col</span> <span class="o">==</span> <span class="mi">19</span><span class="p">):</span>
+<span class="linenos"> 4</span>                    <span class="n">const_hd_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span> <span class="mf">10.0</span> <span class="o">-</span> <span class="n">col</span> <span class="o">/</span> <span class="mf">38.0</span><span class="p">))</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">const_hd</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">ModflowGwfchd</span><span class="p">(</span>
+<span class="linenos"> 7</span>            <span class="n">gwtr_flow</span><span class="p">,</span>
+<span class="linenos"> 8</span>            <span class="n">maxbound</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># max number of const hd cells in model</span>
+<span class="linenos"> 9</span>            <span class="n">stress_period_data</span><span class="o">=</span><span class="n">const_hd_lst</span><span class="p">,</span>
+<span class="linenos">10</span>            <span class="n">save_flows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">11</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="defining-model-output">
+<h2>Defining Model&nbsp;Output</h2>
+<p><span class="caps">MODFLOW</span> output is controlled by parameters in the &#8216;oc&#8217; package. This includes the frequency that hydraulic head values and water budget data are saved to the listing file (or separate head of budget&nbsp;files).</p>
+<ul class="simple">
+<li>Set output file names to record head values and discharge&nbsp;rates</li>
+<li>Set frequently (stress periods <span class="amp">&amp;</span> time steps) output is&nbsp;saved</li>
+<li>Set frequency of output displayed in listing&nbsp;file</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">head_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">.hds&quot;</span>
+<span class="linenos"> 2</span><span class="n">head_filerecord</span> <span class="o">=</span> <span class="p">[</span><span class="n">head_file</span><span class="p">]</span>
+<span class="linenos"> 3</span><span class="n">budgetfile</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mod_name</span><span class="si">}</span><span class="s2">.cbb&quot;</span>
+<span class="linenos"> 4</span><span class="n">budget_filerecord</span> <span class="o">=</span> <span class="p">[</span><span class="n">budgetfile</span><span class="p">]</span>
+<span class="linenos"> 5</span><span class="n">saverecord</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span> <span class="s2">&quot;ALL&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;BUDGET&quot;</span><span class="p">,</span> <span class="s2">&quot;ALL&quot;</span><span class="p">)]</span>
+<span class="linenos"> 6</span><span class="n">printrecord</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span> <span class="s2">&quot;LAST&quot;</span><span class="p">)]</span>
+<span class="linenos"> 7</span><span class="n">oc</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mfgwfoc</span><span class="o">.</span><span class="n">ModflowGwfoc</span><span class="p">(</span>
+<span class="linenos"> 8</span>    <span class="n">gwtr_flow</span><span class="p">,</span> <span class="n">pname</span><span class="o">=</span><span class="s2">&quot;oc&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span>    <span class="n">saverecord</span><span class="o">=</span><span class="n">saverecord</span><span class="p">,</span>
+<span class="linenos">10</span>    <span class="n">head_filerecord</span><span class="o">=</span><span class="n">head_filerecord</span><span class="p">,</span>
+<span class="linenos">11</span>    <span class="n">budget_filerecord</span><span class="o">=</span><span class="n">budget_filerecord</span><span class="p">,</span>
+<span class="linenos">12</span>    <span class="n">printrecord</span><span class="o">=</span><span class="n">printrecord</span><span class="p">,</span>
+<span class="linenos">13</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="create-modflow-input-files-and-run-model">
+<h2>Create <span class="caps">MODFLOW</span> Input Files and Run&nbsp;Model</h2>
+<p>Once the desired packages from <span class="caps">MODFLOW6</span> are defined in the Python script, the input files are written to the working directory (defined in the &#8216;Simulation&#8217; package). The model object is then run, and the modflow executable is called to process the input files written to the computer storage. Both <span class="caps">MODFLOW</span> and flopy need to be installed and the proper <span class="caps">MODFLOW</span> executable file name must be defined in &#8216;Simulation&#8217; package for this to successfully&nbsp;run.</p>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">model</span><span class="o">.</span><span class="n">write_simulation</span><span class="p">()</span>
+<span class="linenos">2</span><span class="n">success</span><span class="p">,</span> <span class="n">buff</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_simulation</span><span class="p">()</span>
+</pre></div>
+<ul class="simple">
+<li>Should see a set of <span class="caps">MODFLOW</span> input files after calling <tt class="docutils literal">write_simulation</tt></li>
+<li><tt class="docutils literal">run_simulation</tt> runs model and produces output files including listing (<tt class="docutils literal"><span class="pre">\*.lst</span></tt>)&nbsp;file</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># open MODFLOW binary files</span>
+<span class="linenos">2</span><span class="n">heads</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">binaryfile</span><span class="o">.</span><span class="n">HeadFile</span><span class="p">(</span><span class="s1">&#39;./DarcyTube.hds&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">flows</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">binaryfile</span><span class="o">.</span><span class="n">CellBudgetFile</span><span class="p">(</span><span class="s1">&#39;DarcyTube.cbb&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">heads</span><span class="o">.</span><span class="n">list_records</span><span class="p">()</span> <span class="c1"># return records in &#39;heads&#39; file</span>
+<span class="linenos">5</span><span class="n">heads</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># get head data for timestep=0, stress period=0</span>
+<span class="linenos">6</span><span class="n">flows</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">kstpkper</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># flopy will change indices to match FORTRAN conventions in output</span>
+</pre></div>
+</div>
+<div class="section" id="looking-at-the-data">
+<h2>Looking at the&nbsp;Data</h2>
+<p>Below is a screenshot after running this script. The working directory should have about 25 files in it with names like &#8216;DarcyTube2.ic&#8217; and &#8216;DarcyTube2.lst&#8217;. The file extension indicates the package associated with the file (e.g., &#8216;*.ic&#8217; for input control files). The text should indicate &#8216;Normal termination of simulation&#8217; (i.e. no obvious errors are in the script). This does not mean the model is fine. There could still be large water balance errors, incorrect data entry, or a poorly conceptualized groundwater flow model. Users need to check the model to verify it is producing reasonable results and has properly converged on a&nbsp;solution.</p>
+<div class="section" id="image-of-ipython-session">
+<h3>Image of ipython&nbsp;session</h3>
+<img alt="Groundwater flow model grid for Darcy tube simulation" src="&lt;{static}../../images/gw_modeling/flopy_darcytube1.png" style="width: 80%;" />
+<ul class="simple">
+<li>Image of ipython session running the flopy script simulating a Darcy tube<ul>
+<li>shows what files are written to computer&nbsp;storage</li>
+<li>info about <span class="caps">MODFLOW</span>&nbsp;version</li>
+<li>info about stress periods/time steps&nbsp;completed</li>
+<li>if model terminated&nbsp;normally</li>
+</ul>
+</li>
+<li>in line 4, output head data using Flopy utilities:<ul>
+<li>0.5 m total head drop, K= <span class="math">\(1 \cdot 10^{-5} m \cdot sec^{-1}}\)</span>, A=0.01 <span class="math">\(m^{2}\)</span>, over 2 m&nbsp;length</li>
+<li>applying Darcy&#8217;s Law, Q = <span class="math">\(2.5 \cdot 10^{-8} m \cdot&nbsp;sec^{-1}\)</span></li>
+<li>applying to cells in col 1 and 19 (1.7 m apart), Q = <span class="math">\(2.63 \cdot 10^{-8} m \cdot&nbsp;sec^{-1}\)</span></li>
+</ul>
+</li>
+<li>Why the difference?<ul>
+<li>The constant head boundary conditions are averaged over&nbsp;cell</li>
+<li>Should be treated at occurring at cell center, not at outer edge of&nbsp;model</li>
+<li>If length is set to 1.9 m over full model length, get &#8216;correct&#8217; answer. This distance is from the center of the first to the center of the last cell, instead of from edge to edge of the&nbsp;model.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Looking at the&nbsp;Data</h2>
+<p>Here the flux or discharge data from the compact budget are shown. These data can be accessed by opening the appropriate file (with a &#8216;cbb&#8217; extension in this example) using the Flopy utility&nbsp;functions.</p>
+<div class="section" id="id2">
+<h3>Image of ipython&nbsp;session</h3>
+<img alt="Screenshot of MODFLOW compact budget file data." src="&lt;{static}../../images/gw_modeling/flopy_darcytube2.png" style="width: 80%;" />
+<ul class="simple">
+<li>Another screenshot of ipython session, showing water budget file<ul>
+<li>Fluxes shown for all faces (only y-z or col-lay faces in this&nbsp;model)</li>
+<li>Fluxes shown for:<ul>
+<li>source-sinks (none in this&nbsp;model)</li>
+<li>for water from/to storage (none in this&nbsp;model)</li>
+<li>for fluxes across faces (only faces perpendicular to x (or row) axis in this&nbsp;model</li>
+<li>fluxes to/from constant head boundary&nbsp;conditions</li>
+</ul>
+</li>
+<li>Fluxes here match what was calculated from heads (with const. heads assigned at cell&nbsp;centers)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Looking at the&nbsp;Data</h2>
+<p>If errors are encountered when running <span class="caps">MODFLOW</span>, good starting points to correct errors are to 1) look at the listing file (&#8216;*.lst&#8217; fine in the work directory) and look at the input files (are they all present? do they end&nbsp;prematurely?).</p>
+<div class="section" id="modflow-listing-file">
+<h3><span class="caps">MODFLOW</span> listing&nbsp;file</h3>
+<img alt="Screenshot of Modflow listing file showing water budget." src="&lt;{static}../../images/gw_modeling/flopy_darcytube3.png" style="width: 80%;" />
+<ul class="simple">
+<li><span class="caps">MODFLOW</span> listing files<ul>
+<li>file with &#8216;lst&#8217; extension (the_model_name.lst), plain text&nbsp;file</li>
+<li>Track input as <span class="caps">MODFLOW</span> reads data&nbsp;file</li>
+<li>Will provide clues where errors are if <span class="caps">MODFLOW</span> run is unsuccessful, can sort out what files are causing&nbsp;problems</li>
+<li>Water Budget (shown in image) should have water-balance errors very close to zero&nbsp;(&lt;1%)</li>
+<li>These files can get very large, may be slow to open in text editors. Can use <tt class="docutils literal">more</tt> and <tt class="docutils literal">less</tt> shell commands to scroll through and search larger&nbsp;files.</li>
+</ul>
+</li>
+</ul>
+<p>I hope this is helpful for people to get started with <span class="caps">MODFLOW</span> and Flopy. This is is a great tool for groundwater professionals and Flopy provides a great interface for making hard things easier to do. I believe this also forces the users to think more about what is being done when compared to a <span class="caps">GUI</span>&nbsp;interface.</p>
+</div>
+</div>
+<script type='text/javascript'>if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 col-sm-pull-9" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/andrewreevephd/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="../../../../blog/2021/02/27/getting-started-with-flopy.html">Getting started with&nbsp;Flopy</a></li>
+    <li class="list-group-item"><a href="../../../../blog/2021/02/02/posted-class-slideshows.html">Posted class&nbsp;slideshows</a></li>
+    <li class="list-group-item"><a href="../../../../blog/2020/12/13/parsing-latex-pdfs-with-pythons-mupdf-library.html">Parsing latex pdf&#8217;s with python&#8217;s mupdf&nbsp;library</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="../../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="../../../../tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="../../../../tag/slideshow.html">slideshow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../tag/modflow-groundwater.html">modflow groundwater</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../tag/flopy.html">flopy</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container-fluid">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2021 asreeve
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../theme/js/respond.min.js"></script>
+
+
+    <script src="../../../../theme/js/bodypadding.js"></script>
+
+
+</body>
+</html>
