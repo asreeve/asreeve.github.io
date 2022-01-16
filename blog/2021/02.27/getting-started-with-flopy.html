@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+
+	<head>
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../../css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../../assets/css/ie8.css" /><![endif]-->
+    <title>Getting started with Flopy</title>
+
+
+<link rel="canonical" href="../../../blog/2021/02.27/getting-started-with-flopy.html">
+
+        <meta name="author" content="asreeve" />
+        <meta name="description" content="Using MODFLOW 6 to simulate a Darcy Tube." />
+
+        <meta property="og:site_name" content="Water Data Analysis" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Getting started with Flopy"/>
+        <meta property="og:url" content="../../../blog/2021/02.27/getting-started-with-flopy.html"/>
+        <meta property="og:description" content="Using MODFLOW 6 to simulate a Darcy Tube."/>
+        <meta property="article:published_time" content="2021-02-27" />
+            <meta property="article:section" content="blog_hydrogeo" />
+            <meta property="article:author" content="asreeve" />
+
+
+
+
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" >
+						<h1><a href="../../..">Water Data Analysis</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+									  <ul>
+					            <li><a href="../../../pages/about-me.html">About Me</a></li>
+					            <li><a href="../../../pages/classes.html">Classes</a></li>
+					        <li><a href="../../../category/blog_general.html">Blog_general</a></li>
+					        <li><a href="../../../category/blog_hydrogeo.html">Blog_hydrogeo</a></li>
+									  </ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+					    <!-- <span class="major icon fa-"></span> -->
+							<h2>Getting started with Flopy</h2>
+							<p><p class="first last">Using MODFLOW 6 to simulate a Darcy Tube.</p>
+</p>
+						</header>
+						<footer class="post-info">
+    					<span class="label label-default">Date</span>
+    					<span class="published"><i class="fa fa-calendar"></i><time datetime="2021-02-27T00:00:00-05:00"> Sat 27 February 2021</time></span>
+							<br />
+        		  <span class="label label-default">Category</span> <a href="../../../category/blog_hydrogeo.html">blog_hydrogeo</a>
+						</footer>
+
+						<section class="wrapper style5">
+							<div class="inner">
+								<div class="section" id="modflow-6-and-flopy">
+<h2>MODFLOW 6 and Flopy</h2>
+<ul class="simple">
+<li>MODFLOW<ul>
+<li>Software developed by the USGS, first USGS documentation in 1983</li>
+<li>Written in FORTRAN, has evolved adding new processes using new FORTRAN features</li>
+<li>Current version (in 2021) is MODFLOW-6, a significant change from previous versions</li>
+<li>Command line program<ul>
+<li>Reads text files defining model, Calculates hydraulic head &amp; water fluxes</li>
+<li>Modular structure defining different features</li>
+<li>Multiple commercial interfaces, USGS developed ModelMuse and Flopy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Flopy<ul>
+<li>Python package, leverages python capabilities for MODFLOW input/output</li>
+<li>Allows use of plotting package, data manipulation</li>
+<li>can use to run multiple models (via python packages)</li>
+</ul>
+</li>
+</ul>
+<p>Available at url{<a class="reference external" href="https://www.usgs.gov/mission-areas/water-resources/science/modflow-and-related-programs">https://www.usgs.gov/mission-areas/water-resources/science/modflow-and-related-programs</a>}</p>
+</div>
+<div class="section" id="a-first-flopy-model">
+<h2>A First Flopy Model</h2>
+<p>To provide a Flopy overview, the simplest groundwater flow model I can conceive of, a Darcy tube, will be created.</p>
+<object data="&lt;{static}../../images/gw_modeling/darcy_tube_sim.svg" style="width: 80%;" type="image/svg+xml">
+</object>
+<ul class="simple">
+<li>one-dimension</li>
+<li>homogeneous materials with a K = <span class="formula">1⋅10<sup> − 5</sup><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>m</i></span><span class="ignored">)/(</span><span class="denominator"><i>sec</i></span><span class="ignored">)</span></span></span></li>
+<li>steady state</li>
+<li>constant head boundaries on ends</li>
+</ul>
+<p>In the text below, I present a brief descriptions of the packages used followed by the Python code needed to implement them.</p>
+</div>
+<div class="section" id="flopy-packages">
+<h2>Flopy packages</h2>
+<p>The packages imported from Flopy to create this model include:</p>
+<ul class="simple">
+<li><tt class="docutils literal">import flopy.mf6.modflow</tt> : to access flopy MODFLOW-6 packages, will set this to <tt class="docutils literal">mf</tt></li>
+<li><tt class="docutils literal">mf.MFSimulation</tt> : creates simulations instance<ul>
+<li><tt class="docutils literal">mf. mf.ModflowTdis</tt> : handles simulation time</li>
+<li><tt class="docutils literal">mf.ModflowIms</tt> : solves matrix equations</li>
+<li><tt class="docutils literal">mf.ModflowGwf</tt> : creates instance of groundwater processes<ul>
+<li><tt class="docutils literal">mf.ModflowGwfdis</tt> : spatial parameters and grid (are other options)</li>
+<li><tt class="docutils literal">mf.ModflowGwfic</tt> : set initial conditions in model (e.g. hydr. head)</li>
+<li><tt class="docutils literal">mf.ModflowGwfnpf</tt> : set cell hydraulic properties</li>
+<li><tt class="docutils literal">mf.ModflowGwfchd</tt> : I.D. const. head cells</li>
+<li><tt class="docutils literal">mf.mfgwfoc.ModflowGwfoc</tt> : control what is output and its formatting</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="import-modules-create-base-model-object">
+<h2>Import Modules, Create Base Model Object</h2>
+<p>The python text used to begin this modeling example follow:</p>
+<ul class="simple">
+<li>Import appropriate modules to use flopy with MODFLOW6 and  post process output:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcsskn">import</span> <span class="pgcssnn">flopy.mf6.modflow</span> <span class="pgcssk">as</span> <span class="pgcssnn">mf</span>
+<span class="pgcsskn">import</span> <span class="pgcssnn">flopy.utils</span> <span class="pgcssk">as</span> <span class="pgcssnn">utils</span>
+<span class="pgcsskn">import</span> <span class="pgcssnn">numpy</span> <span class="pgcssk">as</span> <span class="pgcssnn">np</span>
+</pre></div>
+</td></tr></table><ul class="simple">
+<li>Instantiate the base model, a python object, to be defined with other methods:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">work_dir</span> <span class="pgcsso">=</span> <span class="pgcsss2">&quot;./&quot;</span>
+<span class="pgcssn">mod_name</span> <span class="pgcsso">=</span> <span class="pgcsss2">&quot;DarcyTube&quot;</span>
+
+<span class="pgcssn">model</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">MFSimulation</span><span class="pgcssp">(</span>
+    <span class="pgcssn">sim_name</span><span class="pgcsso">=</span><span class="pgcssn">mod_name</span><span class="pgcssp">,</span>  <span class="pgcssc1"># stem of file names that will be created</span>
+    <span class="pgcssn">sim_ws</span><span class="pgcsso">=</span><span class="pgcssn">work_dir</span><span class="pgcssp">,</span>  <span class="pgcssc1"># directory were modflow input and output files stored</span>
+    <span class="pgcssn">verbosity_level</span><span class="pgcsso">=</span><span class="pgcssmi">1</span><span class="pgcssp">,</span>
+    <span class="pgcssn">exe_name</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;mf6&quot;</span><span class="pgcssp">,</span> <span class="pgcssc1"># name of modflow executable, may need to include path</span>
+<span class="pgcssp">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="model-time-solver-and-basic-groundwater-processes">
+<h2>Model Time, Solver, and Basic Groundwater Processes</h2>
+<p>The number of stress periods and time steps in MODFLOW are set with the 'Tdis' package; the equations that characterize the groundwater flow problem are solved with the 'Ims' package, and the 'Gwf' object that defines the different flow processes  (incudes grid, hydraulic parameters, and source/sink in model).</p>
+<ul class="simple">
+<li>MFmodflowTdis : Time Discretization, stress periods and time steps</li>
+<li>ModflowIms : Iterative Model Solver, define matrix solver</li>
+<li>ModflowGwf : Groundwater flow, object to store flow processes</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">time_dis</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowTdis</span><span class="pgcssp">(</span>
+    <span class="pgcssn">model</span><span class="pgcssp">,</span> <span class="pgcssn">pname</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;TimeDiscret&quot;</span><span class="pgcssp">,</span>
+    <span class="pgcssn">time_units</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;seconds&quot;</span><span class="pgcssp">,</span> <span class="pgcssn">nper</span><span class="pgcsso">=</span><span class="pgcssmi">1</span><span class="pgcssp">,</span>
+    <span class="pgcssn">perioddata</span><span class="pgcsso">=</span><span class="pgcssp">[(</span><span class="pgcssmf">1.0</span><span class="pgcssp">,</span> <span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssmf">1.0</span><span class="pgcssp">)]</span> <span class="pgcssc1"># period length, num steps, mutliplier</span>
+<span class="pgcssp">)</span>
+<span class="pgcssc1"># steady state model in one stress period, these times will not be used</span>
+
+<span class="pgcssn">solver</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowIms</span><span class="pgcssp">(</span><span class="pgcssn">model</span><span class="pgcssp">,</span> <span class="pgcssn">pname</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;solver&quot;</span><span class="pgcssp">,</span> <span class="pgcssn">complexity</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;SIMPLE&quot;</span><span class="pgcssp">)</span>
+
+<span class="pgcssn">gwtr_flow</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwf</span><span class="pgcssp">(</span><span class="pgcssn">model</span><span class="pgcssp">,</span> <span class="pgcssn">modelname</span><span class="pgcsso">=</span><span class="pgcssn">mod_name</span><span class="pgcssp">,</span> <span class="pgcssn">model_nam_file</span><span class="pgcsso">=</span><span class="pgcsssa">f</span><span class="pgcsss2">&quot;</span><span class="pgcsssi">{</span><span class="pgcssn">mod_name</span><span class="pgcsssi">}</span><span class="pgcsss2">.nam&quot;</span><span class="pgcssp">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="spatial-grid-initial-conditions-node-parameters">
+<h2>Spatial Grid, Initial Conditions, Node Parameters</h2>
+<p>Several options are available in MODFLOW6 to define the finite volume grid. In this model the traditional, and simplest, grid structure (a rectilinear grid) is defined with the 'dis' package.
+Initial conditions or starting hydraulic head values are defined with the 'ic' MODFLOW package. Hydraulic conductance (K), dewatering attributes, and cell types (unconfined, confined, perched etc.) are defined in the 'nps' package. Below, ' icelltype=1' indicates the saturated thickness is calculated from the heads when cell water level is below the top of a cell.</p>
+<ul class="simple">
+<li>ModflowGwfdis : Discretise grid, grid size and cell sizes for rectilinear (tradiational) grid, other grids are available in MODFLOW 6</li>
+<li>ModflowGwfic : Initial Conditions, set the initial hydr. heads</li>
+<li>ModflowGwfnpf : Node-Property Flow, set cell properties (hydr params, rewetting, dewatering)</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">grid_dis</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwfdis</span><span class="pgcssp">(</span>
+    <span class="pgcssn">gwtr_flow</span><span class="pgcssp">,</span> <span class="pgcssn">nlay</span><span class="pgcsso">=</span><span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssn">nrow</span><span class="pgcsso">=</span><span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssn">ncol</span><span class="pgcsso">=</span><span class="pgcssmi">20</span><span class="pgcssp">,</span> <span class="pgcssn">delr</span><span class="pgcsso">=</span><span class="pgcssmf">0.1</span><span class="pgcssp">,</span> <span class="pgcssn">delc</span><span class="pgcsso">=</span><span class="pgcssmf">0.1</span><span class="pgcssp">,</span> <span class="pgcssn">top</span><span class="pgcsso">=</span><span class="pgcssmf">0.1</span><span class="pgcssp">,</span> <span class="pgcssn">botm</span><span class="pgcsso">=</span><span class="pgcssmf">0.0</span>
+<span class="pgcssp">)</span>
+<span class="pgcssc1"># 3-D numpy grid used to define 1-D initial hydr. heads</span>
+<span class="pgcssn">init_cond</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwfic</span><span class="pgcssp">(</span>
+    <span class="pgcssn">gwtr_flow</span><span class="pgcssp">,</span> <span class="pgcssn">pname</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;init_cond&quot;</span><span class="pgcssp">,</span> <span class="pgcssn">strt</span><span class="pgcsso">=</span><span class="pgcssmf">10.0</span> <span class="pgcsso">*</span> <span class="pgcssn">np</span><span class="pgcsso">.</span><span class="pgcssn">ones</span><span class="pgcssp">((</span><span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssmi">20</span><span class="pgcssp">))</span>
+<span class="pgcssp">)</span>
+<span class="pgcssc1"># icelltype=1, &#39;non convertable&#39; cell, am assuming won&#39;t de-water</span>
+<span class="pgcssn">node_prop</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwfnpf</span><span class="pgcssp">(</span><span class="pgcssn">gwtr_flow</span><span class="pgcssp">,</span> <span class="pgcssn">icelltype</span><span class="pgcsso">=</span><span class="pgcssmi">1</span><span class="pgcssp">,</span> <span class="pgcssn">k</span><span class="pgcsso">=</span><span class="pgcssmf">1.0e-5</span><span class="pgcssp">,</span> <span class="pgcssn">save_flows</span><span class="pgcsso">=</span><span class="pgcsskc">True</span><span class="pgcssp">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="set-boundary-conditions">
+<h2>Set Boundary Conditions</h2>
+<p>In this model, only constant hydraulic head boundaries are set. Below, a loop is used to do this. For this simple model, it would have been easier to explicitly write out this list of parameters.</p>
+<ul class="simple">
+<li>Only use constant head boundaries, assigned in first and last columns in row</li>
+<li>No-flow assumed along edges (default behavior of MODFLOW).</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">const_hd_lst</span> <span class="pgcsso">=</span> <span class="pgcssp">[]</span> <span class="pgcssc1"># somewhat convoluted way of setting two const head cells</span>
+<span class="pgcssk">for</span> <span class="pgcssn">col</span> <span class="pgcssow">in</span> <span class="pgcssnb">range</span><span class="pgcssp">(</span><span class="pgcssn">grid_dis</span><span class="pgcsso">.</span><span class="pgcssn">ncol</span><span class="pgcsso">.</span><span class="pgcssn">get_data</span><span class="pgcssp">()):</span>  <span class="pgcssc1"># loop over ncol</span>
+    <span class="pgcssk">if</span> <span class="pgcssp">(</span><span class="pgcssn">col</span> <span class="pgcsso">==</span> <span class="pgcssmi">0</span><span class="pgcssp">)</span> <span class="pgcssow">or</span> <span class="pgcssp">(</span><span class="pgcssn">col</span> <span class="pgcsso">==</span> <span class="pgcssmi">19</span><span class="pgcssp">):</span>
+                    <span class="pgcssn">const_hd_lst</span><span class="pgcsso">.</span><span class="pgcssn">append</span><span class="pgcssp">(((</span><span class="pgcssmi">0</span><span class="pgcssp">,</span> <span class="pgcssmi">0</span><span class="pgcssp">,</span> <span class="pgcssn">col</span><span class="pgcssp">),</span> <span class="pgcssmf">10.0</span> <span class="pgcsso">-</span> <span class="pgcssn">col</span> <span class="pgcsso">/</span> <span class="pgcssmf">38.0</span><span class="pgcssp">))</span>
+
+<span class="pgcssn">const_hd</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwfchd</span><span class="pgcssp">(</span>
+            <span class="pgcssn">gwtr_flow</span><span class="pgcssp">,</span>
+            <span class="pgcssn">maxbound</span><span class="pgcsso">=</span><span class="pgcssmi">2</span><span class="pgcssp">,</span>  <span class="pgcssc1"># max number of const hd cells in model</span>
+            <span class="pgcssn">stress_period_data</span><span class="pgcsso">=</span><span class="pgcssn">const_hd_lst</span><span class="pgcssp">,</span>
+            <span class="pgcssn">save_flows</span><span class="pgcsso">=</span><span class="pgcsskc">True</span><span class="pgcssp">,</span>
+<span class="pgcssp">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="defining-model-output">
+<h2>Defining Model Output</h2>
+<p>MODFLOW output is controlled by parameters in the 'oc' package. This includes the frequency that hydraulic head values and water budget data are saved to the listing file (or separate head of budget files).</p>
+<ul class="simple">
+<li>Set output file names to record head values and discharge rates</li>
+<li>Set frequently (stress periods &amp; time steps) output is saved</li>
+<li>Set frequency of output displayed in listing file</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">head_file</span> <span class="pgcsso">=</span> <span class="pgcsssa">f</span><span class="pgcsss2">&quot;</span><span class="pgcsssi">{</span><span class="pgcssn">mod_name</span><span class="pgcsssi">}</span><span class="pgcsss2">.hds&quot;</span>
+<span class="pgcssn">head_filerecord</span> <span class="pgcsso">=</span> <span class="pgcssp">[</span><span class="pgcssn">head_file</span><span class="pgcssp">]</span>
+<span class="pgcssn">budgetfile</span> <span class="pgcsso">=</span> <span class="pgcsssa">f</span><span class="pgcsss2">&quot;</span><span class="pgcsssi">{</span><span class="pgcssn">mod_name</span><span class="pgcsssi">}</span><span class="pgcsss2">.cbb&quot;</span>
+<span class="pgcssn">budget_filerecord</span> <span class="pgcsso">=</span> <span class="pgcssp">[</span><span class="pgcssn">budgetfile</span><span class="pgcssp">]</span>
+<span class="pgcssn">saverecord</span> <span class="pgcsso">=</span> <span class="pgcssp">[(</span><span class="pgcsss2">&quot;HEAD&quot;</span><span class="pgcssp">,</span> <span class="pgcsss2">&quot;ALL&quot;</span><span class="pgcssp">),</span> <span class="pgcssp">(</span><span class="pgcsss2">&quot;BUDGET&quot;</span><span class="pgcssp">,</span> <span class="pgcsss2">&quot;ALL&quot;</span><span class="pgcssp">)]</span>
+<span class="pgcssn">printrecord</span> <span class="pgcsso">=</span> <span class="pgcssp">[(</span><span class="pgcsss2">&quot;HEAD&quot;</span><span class="pgcssp">,</span> <span class="pgcsss2">&quot;LAST&quot;</span><span class="pgcssp">)]</span>
+<span class="pgcssn">oc</span> <span class="pgcsso">=</span> <span class="pgcssn">mf</span><span class="pgcsso">.</span><span class="pgcssn">mfgwfoc</span><span class="pgcsso">.</span><span class="pgcssn">ModflowGwfoc</span><span class="pgcssp">(</span>
+    <span class="pgcssn">gwtr_flow</span><span class="pgcssp">,</span> <span class="pgcssn">pname</span><span class="pgcsso">=</span><span class="pgcsss2">&quot;oc&quot;</span><span class="pgcssp">,</span>
+    <span class="pgcssn">saverecord</span><span class="pgcsso">=</span><span class="pgcssn">saverecord</span><span class="pgcssp">,</span>
+    <span class="pgcssn">head_filerecord</span><span class="pgcsso">=</span><span class="pgcssn">head_filerecord</span><span class="pgcssp">,</span>
+    <span class="pgcssn">budget_filerecord</span><span class="pgcsso">=</span><span class="pgcssn">budget_filerecord</span><span class="pgcssp">,</span>
+    <span class="pgcssn">printrecord</span><span class="pgcsso">=</span><span class="pgcssn">printrecord</span><span class="pgcssp">,</span>
+<span class="pgcssp">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="create-modflow-input-files-and-run-model">
+<h2>Create MODFLOW Input Files and Run Model</h2>
+<p>Once the desired packages from MODFLOW6 are defined in the Python script, the input files are written to the working directory (defined in the 'Simulation' package). The model object is then run, and the modflow executable is called to process the input files written to the computer storage. Both MODFLOW and flopy need to be installed and the proper MODFLOW executable file name must be defined in 'Simulation' package for this to successfully run.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">write_simulation</span><span class="pgcssp">()</span>
+<span class="pgcssn">success</span><span class="pgcssp">,</span> <span class="pgcssn">buff</span> <span class="pgcsso">=</span> <span class="pgcssn">model</span><span class="pgcsso">.</span><span class="pgcssn">run_simulation</span><span class="pgcssp">()</span>
+</pre></div>
+</td></tr></table><ul class="simple">
+<li>Should see a set of MODFLOW input files after calling <tt class="docutils literal">write_simulation</tt></li>
+<li><tt class="docutils literal">run_simulation</tt> runs model and produces output files including listing (<tt class="docutils literal"><span class="pre">\*.lst</span></tt>) file</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcssc1"># open MODFLOW binary files</span>
+<span class="pgcssn">heads</span><span class="pgcsso">=</span><span class="pgcssn">utils</span><span class="pgcsso">.</span><span class="pgcssn">binaryfile</span><span class="pgcsso">.</span><span class="pgcssn">HeadFile</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;./DarcyTube.hds&#39;</span><span class="pgcssp">)</span>
+<span class="pgcssn">flows</span><span class="pgcsso">=</span><span class="pgcssn">utils</span><span class="pgcsso">.</span><span class="pgcssn">binaryfile</span><span class="pgcsso">.</span><span class="pgcssn">CellBudgetFile</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;DarcyTube.cbb&#39;</span><span class="pgcssp">)</span>
+<span class="pgcssn">heads</span><span class="pgcsso">.</span><span class="pgcssn">list_records</span><span class="pgcssp">()</span> <span class="pgcssc1"># return records in &#39;heads&#39; file</span>
+<span class="pgcssn">heads</span><span class="pgcsso">.</span><span class="pgcssn">get_data</span><span class="pgcssp">(</span><span class="pgcssn">kstpkper</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">))</span> <span class="pgcssc1"># get head data for timestep=0, stress period=0</span>
+<span class="pgcssn">flows</span><span class="pgcsso">.</span><span class="pgcssn">get_data</span><span class="pgcssp">(</span><span class="pgcssn">kstpkper</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">))</span> <span class="pgcssc1"># flopy will change indices to match FORTRAN conventions in output</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="looking-at-the-data">
+<h2>Looking at the Data</h2>
+<p>Below is a screenshot after running this script. The working directory should have about 25 files in it with names like 'DarcyTube2.ic' and 'DarcyTube2.lst'. The file extension indicates the package associated with the file (e.g., '*.ic' for input control files). The text should indicate 'Normal termination of simulation' (i.e. no obvious errors are in the script). This does not mean the model is fine. There could still be large water balance errors, incorrect data entry, or a poorly conceptualized groundwater flow model. Users need to check the model to verify it is producing reasonable results and has properly converged on a solution.</p>
+<div class="section" id="image-of-ipython-session">
+<h3>Image of ipython session</h3>
+<img alt="Groundwater flow model grid for Darcy tube simulation" src="&lt;{static}../../images/gw_modeling/flopy_darcytube1.png" style="width: 80%;" />
+<ul class="simple">
+<li>Image of ipython session running the flopy script simulating a Darcy tube<ul>
+<li>shows what files are written to computer storage</li>
+<li>info about MODFLOW version</li>
+<li>info about stress periods/time steps completed</li>
+<li>if model terminated normally</li>
+</ul>
+</li>
+<li>in line 4, output head data using Flopy utilities:<ul>
+<li>0.5 m total head drop, K= <span class="formula">1⋅10<sup> − 5</sup><i>m</i>⋅<i>sec</i><sup> − 1</sup>}</span>, A=0.01 <span class="formula"><i>m</i><sup>2</sup></span>, over 2 m length</li>
+<li>applying Darcy's Law, Q = <span class="formula">2.5⋅10<sup> − 8</sup><i>m</i>⋅<i>sec</i><sup> − 1</sup></span></li>
+<li>applying to cells in col 1 and 19 (1.7 m apart), Q = <span class="formula">2.63⋅10<sup> − 8</sup><i>m</i>⋅<i>sec</i><sup> − 1</sup></span></li>
+</ul>
+</li>
+<li>Why the difference?<ul>
+<li>The constant head boundary conditions are averaged over cell</li>
+<li>Should be treated at occurring at cell center, not at outer edge of model</li>
+<li>If length is set to 1.9 m over full model length, get 'correct' answer. This distance is from the center of the first to the center of the last cell, instead of from edge to edge of the model.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Looking at the Data</h2>
+<p>Here the flux or discharge data from the compact budget are shown. These data can be accessed by opening the appropriate file (with a 'cbb' extension in this example) using the Flopy utility functions.</p>
+<div class="section" id="id2">
+<h3>Image of ipython session</h3>
+<img alt="Screenshot of MODFLOW compact budget file data." src="&lt;{static}../../images/gw_modeling/flopy_darcytube2.png" style="width: 80%;" />
+<ul class="simple">
+<li>Another screenshot of ipython session, showing water budget file<ul>
+<li>Fluxes shown for all faces (only y-z or col-lay faces in this model)</li>
+<li>Fluxes shown for:<ul>
+<li>source-sinks (none in this model)</li>
+<li>for water from/to storage (none in this model)</li>
+<li>for fluxes across faces (only faces perpendicular to x (or row) axis in this model</li>
+<li>fluxes to/from constant head boundary conditions</li>
+</ul>
+</li>
+<li>Fluxes here match what was calculated from heads (with const. heads assigned at cell centers)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Looking at the Data</h2>
+<p>If errors are encountered when running MODFLOW, good starting points to correct errors are to 1) look at the listing file ('*.lst' fine in the work directory) and look at the input files (are they all present? do they end prematurely?).</p>
+<div class="section" id="modflow-listing-file">
+<h3>MODFLOW listing file</h3>
+<img alt="Screenshot of Modflow listing file showing water budget." src="&lt;{static}../../images/gw_modeling/flopy_darcytube3.png" style="width: 80%;" />
+<ul class="simple">
+<li>MODFLOW listing files<ul>
+<li>file with 'lst' extension (the_model_name.lst), plain text file</li>
+<li>Track input as MODFLOW reads data file</li>
+<li>Will provide clues where errors are if MODFLOW run is unsuccessful, can sort out what files are causing problems</li>
+<li>Water Budget (shown in image) should have water-balance errors very close to zero (&lt;1%)</li>
+<li>These files can get very large, may be slow to open in text editors. Can use <tt class="docutils literal">more</tt> and <tt class="docutils literal">less</tt> shell commands to scroll through and search larger files.</li>
+</ul>
+</li>
+</ul>
+<p>I hope this is helpful for people to get started with MODFLOW and Flopy. This is is a great tool for groundwater professionals and Flopy provides a great interface for making hard things easier to do. I believe this also forces the users to think more about what is being done when compared to a GUI interface.</p>
+</div>
+</div>
+
+							</div>
+						</section>
+
+					</article>
+
+
+
+			</div>
+
+<!-- Footer -->
+
+<footer id="footer">
+  <ul class="icons">
+    <li><a href="mailto:asreeve@maine.edu" class="icon fa-envelope"><span class="label">"Email"</span></a></li>
+    <li><a href="https://github.com/asreeve" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/in/andrewreevephd/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+  </ul>
+  <ul class="copyright">
+    <li>&copy; asreeve</li>
+    <li>Made with Pelican, based on design by HTML5 UP</li>
+  </ul>
+</footer>
+		<!-- Scripts -->
+			<script src="../../../js/jquery.min.js"></script>
+			<script src="../../../js/jquery.scrollex.min.js"></script>
+			<script src="../../../js/jquery.scrolly.min.js"></script>
+			<script src="../../../js/skel.min.js"></script>
+			<script src="../../../js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../../js/main.js"></script>
+
+
+
+	</body>
+</html>
