@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+
+	<head>
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../../css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../../assets/css/ie8.css" /><![endif]-->
+    <title>Parsing latex pdf's with python's mupdf library</title>
+
+
+<link rel="canonical" href="../../../blog/2020/12.13/parsing-latex-pdfs-with-pythons-mupdf-library.html">
+
+        <meta name="author" content="asreeve" />
+        <meta name="keywords" content="python,slideshow" />
+        <meta name="description" content="Why? In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format. All …" />
+
+        <meta property="og:site_name" content="Water Data Analysis" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Parsing latex pdf&#39;s with python&#39;s mupdf library"/>
+        <meta property="og:url" content="../../../blog/2020/12.13/parsing-latex-pdfs-with-pythons-mupdf-library.html"/>
+        <meta property="og:description" content="Why? In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format. All …"/>
+        <meta property="article:published_time" content="2020-12-13" />
+            <meta property="article:section" content="blog_general" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="slideshow" />
+            <meta property="article:author" content="asreeve" />
+
+
+
+
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" >
+						<h1><a href="../../..">Water Data Analysis</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+									  <ul>
+					            <li><a href="../../../pages/about-me.html">About Me</a></li>
+					            <li><a href="../../../pages/classes.html">Classes</a></li>
+					        <li><a href="../../../category/blog_general.html">Blog_general</a></li>
+					        <li><a href="../../../category/blog_hydrogeo.html">Blog_hydrogeo</a></li>
+					        <li><a href="../../../category/blog_mexico.html">Blog_mexico</a></li>
+									  </ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+					    <!-- <span class="major icon fa-"></span> -->
+							<h2>Parsing latex pdf's with python's mupdf library</h2>
+							<p><div class="section" id="why">
+<h2>Why?</h2>
+<p>In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format.
+All …</p></div></p>
+						</header>
+						<footer class="post-info">
+    					<span class="label label-default">Date</span>
+    					<span class="published"><i class="fa fa-calendar"></i><time datetime="2020-12-13T00:00:00-05:00"> Sun 13 December 2020</time></span>
+							<br />
+        		  <span class="label label-default">Category</span> <a href="../../../category/blog_general.html">blog_general</a>
+						</footer>
+
+						<section class="wrapper style5">
+							<div class="inner">
+								<div class="section" id="why">
+<h2>Why?</h2>
+<p>In the Fall of 2020, I needed to switch an entire class to an all online (asynchronous) format.
+All my previous slides were made using LaTeX's beamer package. I needed to either redo all this content or repurposed this material for online content. I had previously made mpg4 videos for a portion fo this class. but was dissatisfied with the videos several reasons:</p>
+<ol class="arabic simple">
+<li>Videos are relatively large files and some students did not have good internet connections,</li>
+<li>Videos were difficult to edit. I needed to listen to the entire video to find errors and edit them. This was very time-consuming,</li>
+<li>I saw no easy way to modify or update a video.</li>
+</ol>
+<p>I decided that slideshows with voice overs would provide a better format both for viewing and for maintenance. After some searching I settled on using reveal.js to create my slideshows. This provided a way to mix audio and graphics, had plugins that allowed quizzes to be created for the slideshows, allowed inclusion of math, and allowed the inclusion of gifs and videos. Packages in Emacs (a text editor) provided a way of creating slideshows without the need to write HTML, simplifying the process. Because HTML is a plain text format, writing scripts to modify the files would be fairly easy.</p>
+<p>Instead of rewriting the LaTeX files used to make the PDF files, I decided to convert the PDF pages into PNG graphic files. This allowed me to quickly reuse slides I'd made. Automating this process is the theme for the rest of this post.</p>
+</div>
+<div class="section" id="automating-slide-conversion">
+<h2>Automating slide conversion</h2>
+<p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) graphic file.</p>
+<p>The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file is given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png). This code below is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcsskn">from</span> <span class="pgcssnn">pathlib</span> <span class="pgcsskn">import</span> <span class="pgcssn">Path</span>
+<span class="pgcsskn">from</span> <span class="pgcssnn">shutil</span> <span class="pgcsskn">import</span> <span class="pgcssn">copyfile</span>
+<span class="pgcsskn">import</span> <span class="pgcssnn">fitz</span>
+
+<span class="pgcssk">class</span> <span class="pgcssnc">make_base</span><span class="pgcssp">:</span>
+        <span class="pgcssk">def</span> <span class="pgcssfm">__init__</span><span class="pgcssp">(</span><span class="pgcssbp">self</span><span class="pgcssp">,</span><span class="pgcssn">pdf_file</span><span class="pgcsso">=</span><span class="pgcsss1">&#39;energy.pdf&#39;</span><span class="pgcssp">,</span><span class="pgcssn">topic</span><span class="pgcsso">=</span><span class="pgcsss1">&#39;25_energy&#39;</span><span class="pgcssp">):</span>
+                <span class="pgcsssd">&#39;&#39;&#39; set up location for input PDF file&#39;&#39;&#39;</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">lect_path</span><span class="pgcsso">=</span><span class="pgcssn">Path</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;../lect&#39;</span><span class="pgcssp">)</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">topic</span><span class="pgcsso">=</span><span class="pgcssn">Path</span><span class="pgcssp">(</span><span class="pgcsssa">f</span><span class="pgcsss1">&#39;./</span><span class="pgcsssi">{</span><span class="pgcssn">topic</span><span class="pgcsssi">}</span><span class="pgcsss1">&#39;</span><span class="pgcssp">)</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">pdf_file</span><span class="pgcsso">=</span><span class="pgcssn">pdf_file</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">source</span><span class="pgcsso">=</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">lect_path</span><span class="pgcsso">.</span><span class="pgcssn">joinpath</span><span class="pgcssp">(</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">topic</span><span class="pgcssp">,</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">pdf_file</span><span class="pgcssp">)</span>
+
+        <span class="pgcssk">def</span> <span class="pgcssnf">split_pdf</span><span class="pgcssp">(</span><span class="pgcssbp">self</span><span class="pgcssp">,):</span>
+            <span class="pgcsssd">&#39;&#39;&#39;</span>
+<span class="pgcsssd">                split pdf pages into seperate png images</span>
+<span class="pgcsssd">                dest: location of pdf file</span>
+<span class="pgcsssd">                self.slide_titles: stores slide header from the LaTeX beamer page for future use</span>
+<span class="pgcsssd">                self.slide_num: stores the slide number for future use</span>
+<span class="pgcsssd">                &#39;&#39;&#39;</span>
+                <span class="pgcssn">dest</span><span class="pgcsso">=</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">topic</span><span class="pgcsso">.</span><span class="pgcssn">joinpath</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;slides&#39;</span><span class="pgcssp">,</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">pdf_file</span><span class="pgcssp">)</span>
+                <span class="pgcssn">pdf_obj</span><span class="pgcsso">=</span><span class="pgcssn">fitz</span><span class="pgcsso">.</span><span class="pgcssn">open</span><span class="pgcssp">(</span><span class="pgcssn">dest</span><span class="pgcssp">)</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">slide_titles</span><span class="pgcsso">=</span><span class="pgcssp">[]</span>
+                <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">slide_num</span><span class="pgcsso">=</span><span class="pgcssp">[]</span>
+                <span class="pgcssn">slide_base</span><span class="pgcsso">=</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">pdf_file</span><span class="pgcsso">.</span><span class="pgcssn">split</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;.&#39;</span><span class="pgcssp">)[</span><span class="pgcssmi">0</span><span class="pgcssp">]</span>
+                <span class="pgcssk">for</span> <span class="pgcssn">i</span><span class="pgcssp">,</span><span class="pgcssn">page</span> <span class="pgcssow">in</span> <span class="pgcssnb">enumerate</span><span class="pgcssp">(</span><span class="pgcssn">pdf_obj</span><span class="pgcssp">):</span>
+                        <span class="pgcssn">pgtxt</span> <span class="pgcsso">=</span> <span class="pgcssn">page</span><span class="pgcsso">.</span><span class="pgcssn">getText</span><span class="pgcssp">()</span>
+                        <span class="pgcssc1"># read in page text and save line (2nd from back).</span>
+                        <span class="pgcssc1"># The first item in this list is the page number</span>
+                        <span class="pgcssn">pagenum</span><span class="pgcsso">=</span><span class="pgcssn">pgtxt</span><span class="pgcsso">.</span><span class="pgcssn">split</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;</span><span class="pgcssse">\n</span><span class="pgcsss1">&#39;</span><span class="pgcssp">)[</span><span class="pgcsso">-</span><span class="pgcssmi">2</span><span class="pgcssp">]</span><span class="pgcsso">.</span><span class="pgcssn">split</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;/&#39;</span><span class="pgcssp">)</span>
+                        <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">slide_num</span><span class="pgcsso">.</span><span class="pgcssn">append</span><span class="pgcssp">(</span><span class="pgcssnb">int</span><span class="pgcssp">(</span><span class="pgcssn">pagenum</span><span class="pgcssp">[</span><span class="pgcssmi">0</span><span class="pgcssp">]))</span>
+                        <span class="pgcssc1"># get the header. If no header exists in the beamer file, incorrect data will be saved here</span>
+                        <span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">slide_titles</span><span class="pgcsso">.</span><span class="pgcssn">append</span><span class="pgcssp">(</span><span class="pgcssn">page</span><span class="pgcsso">.</span><span class="pgcssn">getText</span><span class="pgcssp">(</span><span class="pgcsss1">&#39;blocks&#39;</span><span class="pgcssp">)[</span><span class="pgcssmi">0</span><span class="pgcssp">][</span><span class="pgcssmi">4</span><span class="pgcssp">])</span>
+                        <span class="pgcsssd">&#39;&#39;&#39;</span>
+<span class="pgcsssd">                        matrix represents the first two columns of a 3 by 3 matrix. This is used to magnify,</span>
+<span class="pgcsssd">                        shear and rotate the page information in the line below, the matrix term multiplies</span>
+<span class="pgcsssd">                        the pages data by 3, magnifying it and making the pixelmap larger, increasing resolution.</span>
+<span class="pgcsssd">                        &#39;&#39;&#39;</span>
+                        <span class="pgcssn">png</span><span class="pgcsso">=</span><span class="pgcssn">page</span><span class="pgcsso">.</span><span class="pgcssn">getPixmap</span><span class="pgcssp">(</span><span class="pgcssn">matrix</span><span class="pgcsso">=</span><span class="pgcssp">[</span><span class="pgcssmi">3</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">3</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">])</span>
+                        <span class="pgcssn">png</span><span class="pgcsso">.</span><span class="pgcssn">pillowWrite</span><span class="pgcssp">(</span><span class="pgcsssa">f</span><span class="pgcsss2">&quot;./</span><span class="pgcsssi">{</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">topic</span><span class="pgcsssi">}</span><span class="pgcsss2">/slides/</span><span class="pgcsssi">{</span><span class="pgcssn">slide_base</span><span class="pgcsssi">}</span><span class="pgcsss2">_</span><span class="pgcsssi">{</span><span class="pgcssn">i</span><span class="pgcsssi">:</span><span class="pgcsss2">03</span><span class="pgcsssi">}</span><span class="pgcsss2">.png&quot;</span><span class="pgcssp">,</span><span class="pgcssn">dpi</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">300</span><span class="pgcssp">,</span><span class="pgcssmi">300</span><span class="pgcssp">))</span>
+        <span class="pgcssn">pdf_obj</span><span class="pgcsso">.</span><span class="pgcssn">close</span><span class="pgcssp">()</span>
+</pre></div>
+</td></tr></table></div>
+
+							</div>
+						</section>
+
+					</article>
+
+
+
+			</div>
+
+<!-- Footer -->
+
+<footer id="footer">
+  <ul class="icons">
+    <li><a href="mailto:asreeve@maine.edu" class="icon fa-envelope"><span class="label">"Email"</span></a></li>
+    <li><a href="https://github.com/asreeve" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/in/andrewreevephd/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+  </ul>
+  <ul class="copyright">
+    <li>&copy; asreeve</li>
+    <li>Made with Pelican, based on design by HTML5 UP</li>
+  </ul>
+</footer>
+		<!-- Scripts -->
+			<script src="../../../js/jquery.min.js"></script>
+			<script src="../../../js/jquery.scrollex.min.js"></script>
+			<script src="../../../js/jquery.scrolly.min.js"></script>
+			<script src="../../../js/skel.min.js"></script>
+			<script src="../../../js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../../js/main.js"></script>
+
+
+
+	</body>
+</html>
