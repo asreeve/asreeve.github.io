@@ -100,7 +100,7 @@ All my previous slides were made using LaTeX's beamer package. I needed to eithe
 <h2>Automating slide conversion</h2>
 <p>As I use Python in my daily work, I searched for an appropriate python module that would provide a tool for manipulating PDFs, and settled on using PyMyPDF. The goal was to be able to read in a PDF file containing my class slides and convert each page to a PNG (or similar) graphic file.</p>
 <p>The basic module in PyMuPDF for accessing the PyMuPDF functions is called <em>fitz</em> and the <em>Page</em> class within <em>fitz</em> is used for manipulating PDF pages. To read each PDF page and write them out as PNG graphic files, the module reads a PDF file, converts it to a PNG object, and writes the file. Each PNG file is given the name of the original PDF and the page number (<em>e.g.</em> PdfFile_01.png). This code below is part of a larger python script used to convert PDF files into a PNG based slideshow.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -139,7 +139,7 @@ All my previous slides were made using LaTeX's beamer package. I needed to eithe
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="pgcsskn">from</span> <span class="pgcssnn">pathlib</span> <span class="pgcsskn">import</span> <span class="pgcssn">Path</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><span class="pgcsskn">from</span> <span class="pgcssnn">pathlib</span> <span class="pgcsskn">import</span> <span class="pgcssn">Path</span>
 <span class="pgcsskn">from</span> <span class="pgcssnn">shutil</span> <span class="pgcsskn">import</span> <span class="pgcssn">copyfile</span>
 <span class="pgcsskn">import</span> <span class="pgcssnn">fitz</span>
 
@@ -179,8 +179,8 @@ All my previous slides were made using LaTeX's beamer package. I needed to eithe
                         <span class="pgcssn">png</span><span class="pgcsso">=</span><span class="pgcssn">page</span><span class="pgcsso">.</span><span class="pgcssn">getPixmap</span><span class="pgcssp">(</span><span class="pgcssn">matrix</span><span class="pgcsso">=</span><span class="pgcssp">[</span><span class="pgcssmi">3</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">3</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">,</span><span class="pgcssmi">0</span><span class="pgcssp">])</span>
                         <span class="pgcssn">png</span><span class="pgcsso">.</span><span class="pgcssn">pillowWrite</span><span class="pgcssp">(</span><span class="pgcsssa">f</span><span class="pgcsss2">&quot;./</span><span class="pgcsssi">{</span><span class="pgcssbp">self</span><span class="pgcsso">.</span><span class="pgcssn">topic</span><span class="pgcsssi">}</span><span class="pgcsss2">/slides/</span><span class="pgcsssi">{</span><span class="pgcssn">slide_base</span><span class="pgcsssi">}</span><span class="pgcsss2">_</span><span class="pgcsssi">{</span><span class="pgcssn">i</span><span class="pgcsssi">:</span><span class="pgcsss2">03</span><span class="pgcsssi">}</span><span class="pgcsss2">.png&quot;</span><span class="pgcssp">,</span><span class="pgcssn">dpi</span><span class="pgcsso">=</span><span class="pgcssp">(</span><span class="pgcssmi">300</span><span class="pgcssp">,</span><span class="pgcssmi">300</span><span class="pgcssp">))</span>
         <span class="pgcssn">pdf_obj</span><span class="pgcsso">.</span><span class="pgcssn">close</span><span class="pgcssp">()</span>
-</pre></div>
-</td></tr></table></div>
+</pre></div></td></tr></table></div>
+</div>
 
 							</div>
 						</section>
